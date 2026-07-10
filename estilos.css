@@ -34,9 +34,9 @@ a{color:inherit;}
 .enlaces-cabecera{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:12px;}
 .enlace-cabecera{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 22px;border:1px solid rgba(255,255,255,.45);border-radius:999px;color:var(--blanco);text-decoration:none;font-size:1rem;font-weight:800;background:rgba(255,255,255,.08);}
 .enlace-cabecera:hover{color:var(--blanco);background:rgba(255,255,255,.16);}
-.cabecera .enlace-cabecera[href="https://crebe-ucayali.netlify.app/"]:not(:first-child){display:none;}
-.cabecera .enlace-cabecera[href*="accesos-complementarios/contacto.html"]{font-size:0;}
-.cabecera .enlace-cabecera[href*="accesos-complementarios/contacto.html"]::after{content:"Contacto Institucional";font-size:1rem;}
+.cabecera .enlace-cabecera[href="https://crebeucayali.github.io/inicio/"]:not(:first-child){display:none;}
+.cabecera .enlace-cabecera[href*="accesos-complementarios/institucional/contacto.html"]{font-size:0;}
+.cabecera .enlace-cabecera[href*="accesos-complementarios/institucional/contacto.html"]::after{content:"Contacto Institucional";font-size:1rem;}
 
 .portada{max-width:1120px;margin:70px auto 0;}
 .bloque-institucional{display:flex;align-items:center;gap:22px;margin-bottom:34px;max-width:none;}
@@ -109,8 +109,8 @@ footer{background:#082f49;color:var(--blanco);padding:42px 18px 26px;}
 .footer-bloque p{margin:0;color:#d9eaf7;line-height:1.65;font-size:.94rem;}
 .footer-bloque a{color:#d9eaf7;text-decoration:underline;text-underline-offset:3px;}
 .footer-bloque a:hover{text-decoration:underline;}
-.footer-bloque a[href*="accesos-complementarios/contacto.html"]{font-size:0;}
-.footer-bloque a[href*="accesos-complementarios/contacto.html"]::after{content:"Contacto Institucional";font-size:.94rem;}
+.footer-bloque a[href*="accesos-complementarios/institucional/contacto.html"]{font-size:0;}
+.footer-bloque a[href*="accesos-complementarios/institucional/contacto.html"]::after{content:"Contacto Institucional";font-size:.94rem;}
 .footer-marca{display:flex;align-items:flex-start;gap:16px;}
 .footer-logo{width:72px;max-width:72px;height:auto;object-fit:contain;display:block;flex-shrink:0;}
 .footer-final{max-width:1120px;margin:28px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);}
@@ -127,7 +127,7 @@ footer{background:#082f49;color:var(--blanco);padding:42px 18px 26px;}
   .navegacion{align-items:flex-start;flex-direction:column;}
   .enlaces-cabecera{display:flex;width:100%;justify-content:flex-start;align-items:center;gap:8px;flex-wrap:wrap;}
   .enlace-cabecera{width:auto;min-width:0;min-height:38px;padding:8px 12px;font-size:.84rem;line-height:1.1;text-align:center;white-space:nowrap;border-radius:999px;}
-  .cabecera .enlace-cabecera[href*="accesos-complementarios/contacto.html"]::after{font-size:.84rem;}
+  .cabecera .enlace-cabecera[href*="accesos-complementarios/institucional/contacto.html"]::after{font-size:.84rem;}
   .portada{margin-top:54px;}
   .bloque-institucional{align-items:center;gap:16px;margin-bottom:28px;}
   .logo-crebe{width:80px;max-width:80px;height:80px;max-height:80px;}
