@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generador de palabras en Braille para crear recursos educativos accesibles.">
+  <title>Generador de palabras en Braille</title>
+  <link rel="stylesheet" href="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.css?v=7">
+  <link rel="stylesheet" href="estilos.css?v=11">
+  <style>
+    body .cabecera{position:relative!important;overflow:hidden!important;padding:30px 18px 145px!important;color:#ffffff!important;background:radial-gradient(circle at 84% 70%,rgba(255,255,255,.11) 0 22%,transparent 23%),radial-gradient(circle at 86% 74%,rgba(255,255,255,.08) 0 36%,transparent 37%),linear-gradient(135deg,#0b3550 0%,#0f4f57 48%,#0f766e 100%)!important;}
+    body .cabecera::after{display:none!important;content:none!important;}
+    body .patron-portada{position:absolute!important;inset:0!important;z-index:0!important;overflow:hidden!important;pointer-events:none!important;background-image:url("../patron-shipibo.webp?v=2")!important;background-repeat:repeat!important;background-size:cover!important;background-position:center!important;opacity:.30!important;filter:saturate(1.15) contrast(1.08)!important;}
+    body .cabecera .navegacion,body .cabecera .portada{position:relative!important;z-index:1!important;}
+    body .navegacion{max-width:1120px!important;margin:0 auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;flex-wrap:wrap!important;}
+    body .marca-institucional{display:inline-flex!important;align-items:center!important;gap:14px!important;max-width:min(560px,100%)!important;color:#ffffff!important;text-decoration:none!important;font-weight:900!important;font-size:1.05rem!important;}
+    body .marca-logo-superior{display:block!important;width:58px!important;height:58px!important;object-fit:contain!important;flex-shrink:0!important;padding:4px!important;background:rgba(255,255,255,.96)!important;border-radius:18px!important;box-shadow:0 10px 24px rgba(0,0,0,.14)!important;}
+    body .marca-texto-superior{display:block!important;padding-left:14px!important;border-left:2px solid rgba(255,255,255,.35)!important;text-shadow:0 2px 4px rgba(0,0,0,.28)!important;}
+    body .marca-modulo{display:block!important;margin:0 0 3px!important;color:#c9f7ee!important;font-size:.76rem!important;font-weight:900!important;line-height:1.15!important;letter-spacing:.16em!important;text-transform:uppercase!important;}
+    body .marca-nombre-institucional{display:block!important;color:#ffffff!important;font-size:1.02rem!important;font-weight:900!important;line-height:1.2!important;}
+    body .marca-detalle-institucional{display:block!important;margin-top:4px!important;color:rgba(255,255,255,.94)!important;font-size:.88rem!important;font-weight:750!important;line-height:1.25!important;}
+    body .enlaces-cabecera-generador{display:flex!important;align-items:center!important;justify-content:flex-end!important;flex-wrap:wrap!important;gap:12px!important;}
+    body .enlace-cabecera{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:46px!important;padding:10px 22px!important;border:1px solid rgba(255,255,255,.45)!important;border-radius:999px!important;color:#ffffff!important;text-decoration:none!important;font-size:1rem!important;font-weight:800!important;background:rgba(255,255,255,.08)!important;text-shadow:0 2px 4px rgba(0,0,0,.24)!important;}
+    body .enlace-cabecera:hover{color:#ffffff!important;background:rgba(255,255,255,.16)!important;}
+    body .portada{position:relative!important;z-index:1!important;max-width:1120px!important;margin:70px auto 0!important;}
+    body .etiqueta{margin:0 0 14px!important;color:#c9f7ee!important;font-size:.86rem!important;font-weight:900!important;letter-spacing:.18em!important;text-transform:uppercase!important;text-shadow:0 2px 4px rgba(0,0,0,.28)!important;}
+    body .portada h1{max-width:900px!important;margin:0 0 22px!important;color:#ffffff!important;font-family:Georgia,"Times New Roman",serif!important;font-size:clamp(2.5rem,5.8vw,4.15rem)!important;line-height:1.04!important;letter-spacing:-.04em!important;text-shadow:0 3px 5px rgba(0,0,0,.22)!important;}
+    body .subtitulo{max-width:880px!important;margin:0!important;color:rgba(255,255,255,.96)!important;font-size:1.22rem!important;line-height:1.65!important;text-shadow:0 2px 4px rgba(0,0,0,.28)!important;}
+    @media(max-width:700px){body .cabecera{padding:26px 18px 116px!important;}body .navegacion{align-items:flex-start!important;flex-direction:column!important;}body .portada{margin-top:54px!important;}body .marca-institucional{align-items:flex-start!important;}body .marca-logo-superior{width:52px!important;height:52px!important;border-radius:16px!important;}body .marca-texto-superior{padding-left:12px!important;}body .marca-nombre-institucional{font-size:.94rem!important;}body .marca-detalle-institucional{font-size:.82rem!important;}body .enlaces-cabecera-generador{justify-content:flex-start!important;}}
+  </style>
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <header class="cabecera">
+    <div class="patron-portada" aria-hidden="true"></div>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="marca marca-institucional" href="../index.html" aria-label="Volver al inicio de Materiales Educativos Accesibles">
+        <img class="marca-logo-superior" src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <span class="marca-texto-superior">
+          <span class="marca-modulo">Materiales Educativos Accesibles</span>
+          <span class="marca-nombre-institucional">CREBE "Señor de los Milagros" - Ucayali</span>
+          <span class="marca-detalle-institucional">Centro de Recursos de Educación Básica Especial</span>
+        </span>
+      </a>
+      <div class="enlaces-cabecera-generador">
+        <a class="enlace-cabecera" href="../index.html">Volver a MEA</a>
+        <a class="enlace-cabecera" href="https://crebe-ucayali.netlify.app/">Inicio principal</a>
+        <a class="enlace-cabecera" href="https://gabriel-lsp.github.io/accesos-complementarios/paginas/contacto.html">Contacto</a>
+      </div>
+    </nav>
+
+    <div class="portada">
+      <p class="etiqueta">ECOSISTEMA VIRTUAL ACCESIBLE</p>
+      <h1>Materiales Educativos Accesibles</h1>
+      <p class="subtitulo">Repositorio digital de recursos pedagógicos para apoyar la inclusión educativa, la accesibilidad y la atención a la diversidad.</p>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="panel-braille" aria-labelledby="titulo-generador">
+      <div class="panel-encabezado">
+        <p class="sobretitulo">Escribe y descarga en Braille</p>
+        <h2 id="titulo-generador">Generador de palabras en Braille</h2>
+        <p class="texto-panel-braille">Este espacio permite convertir letras, números y algunas palabras cortas en una representación visual del sistema Braille. El resultado puede descargarse como PDF para actividades educativas.</p>
+      </div>
+
+      <div class="contenedor-generador">
+        <div class="bloque-generador">
+          <label class="etiqueta-campo" for="entrada-braille">Escribe una palabra o frase</label>
+          <input id="entrada-braille" class="entrada" type="text" maxlength="40" placeholder="Ejemplo: Gabriel, Ana, casa" autocomplete="off">
+          <div class="acciones">
+            <button id="generar-braille" class="boton" type="button">Generar en Braille</button>
+            <button id="limpiar-braille" class="boton-secundario" type="button">Limpiar</button>
+          </div>
+
+          <div id="recurso-braille" class="vista-previa" aria-live="polite">
+            <p class="sobretitulo">Vista previa</p>
+            <h3 id="texto-generado-braille">Tu palabra aparecerá aquí</h3>
+            <div id="resultado-braille" class="resultado">
+              <p class="mensaje-inicial">Ingresa una palabra para generar su representación en Braille.</p>
+            </div>
+          </div>
+
+          <p class="sugerencia">Sugerencia: este recurso puede utilizarse para practicar nombres, palabras cotidianas y actividades personalizadas.</p>
+        </div>
+
+        <aside class="panel-descarga" aria-labelledby="titulo-descarga">
+          <h2 id="titulo-descarga">Descargar recurso</h2>
+          <p>Genera una ficha sencilla con la palabra escrita y su representación visual en Braille.</p>
+          <button id="descargar-pdf-braille" class="boton-descarga" type="button">Descargar en PDF</button>
+          <p class="nota">El archivo se descarga como material de apoyo para imprimir, compartir o usar en sesiones educativas.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="bloque-uso">
+      <p><strong>Uso educativo e inclusivo:</strong> este generador está pensado como apoyo visual para la práctica inicial del sistema Braille. No reemplaza el aprendizaje táctil con material en relieve.</p>
+    </section>
+
+    <div class="volver"><a href="../index.html">Volver al inicio MEA</a></div>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-bloque footer-marca">
+        <img class="footer-logo" src="https://gabriel-lsp.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <div>
+          <h2>Generador de palabras en Braille</h2>
+          <p>Recurso educativo para crear palabras, nombres o frases cortas con representación visual del sistema Braille.</p>
+        </div>
+      </div>
+      <div class="footer-bloque">
+        <h2>Enlaces</h2>
+        <p>
+          <a href="../index.html">Inicio MEA</a><br>
+          <a href="generador.html">Generador Braille</a><br>
+          <a href="../pictogramas/pictogramas.html">Pictogramas y apoyos visuales</a><br>
+          <a href="../rutinas/rutinas.html">Generador de rutinas visuales</a><br>
+          <a href="../conciencia-fonologica/conciencia-fonologica.html">Silabario</a><br>
+        </p>
+      </div>
+      <div class="footer-bloque">
+        <h2>Contacto</h2>
+        <p>
+          <a href="https://gabriel-lsp.github.io/accesos-complementarios/paginas/contacto.html">Contacto institucional</a><br>
+          CREBE "Señor de los Milagros" - Ucayali<br>
+          Correo: senordelosmilagroscrebe@gmail.com<br>
+          Horario: lunes a viernes, 8:00 a.m. - 12:00 p.m.<br>
+          <a href="https://www.facebook.com/CREBESM" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+          <a href="https://www.tiktok.com/@crebe.sm.ucayali?_r=1&_t=ZS-97Qjebz1I0b" target="_blank" rel="noopener noreferrer">TikTok</a><br>
+        </p>
+      </div>
+    </div>
+    <div class="footer-final"><p>© 2026 Gabriel Berrospi. Desarrollo original. Uso institucional autorizado al CREBE "Señor de los Milagros" - Ucayali.</p></div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="generador.js?v=2" defer></script>
+  <script src="https://gabriel-lsp.github.io/accesos-complementarios/accesibilidad/accesibilidad.js?v=7" defer></script>
+</body>
+</html>

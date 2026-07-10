@@ -1,0 +1,559 @@
+@import url("../estilos.css?v=22");
+
+.logo-crebe{
+  width:80px;
+  max-width:80px;
+  height:80px;
+  max-height:80px;
+  object-fit:contain;
+}
+
+.enlaces-cabecera-rutinas{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.panel-rutinas{
+  background:#ffffff;
+  border:1px solid #d9e2ec;
+  border-radius:26px;
+  box-shadow:0 18px 42px rgba(16,42,67,.16);
+  padding:34px 46px 40px;
+}
+
+.panel-rutinas .panel-encabezado{
+  display:block;
+  margin-bottom:28px;
+}
+
+.texto-panel-rutinas{
+  max-width:860px;
+  margin:14px 0 0;
+  color:#486581;
+  line-height:1.65;
+  font-size:1rem;
+}
+
+.configuracion-rutina{
+  display:grid;
+  grid-template-columns:1fr 230px auto;
+  gap:14px;
+  align-items:end;
+  margin-top:24px;
+  padding:20px;
+  border:1px solid #d9e2ec;
+  border-radius:22px;
+  background:#fbfdff;
+}
+
+.campo-configuracion label,
+.buscador-arasaac label{
+  display:block;
+  margin:0 0 8px;
+  color:#072f57;
+  font-weight:900;
+}
+
+.campo-configuracion select,
+.campo-configuracion input,
+.buscador-arasaac input{
+  width:100%;
+  min-height:54px;
+  border:1px solid #d9e2ec;
+  border-radius:16px;
+  padding:0 14px;
+  font:inherit;
+  color:#102a43;
+  background:#ffffff;
+}
+
+.boton-rutina{
+  border:0;
+  cursor:pointer;
+  min-height:54px;
+  padding:12px 24px;
+  border-radius:999px;
+  background:#0f766e;
+  color:#ffffff;
+  font-weight:900;
+  font-family:inherit;
+  box-shadow:0 8px 18px rgba(0,0,0,.12);
+}
+
+.boton-rutina:hover{
+  background:#0b4f4a;
+}
+
+.zona-construccion{
+  display:grid;
+  grid-template-columns:1fr .95fr;
+  gap:22px;
+  margin-top:24px;
+  align-items:start;
+}
+
+.bloque-editor,
+.bloque-buscador{
+  border:1px solid #d9e2ec;
+  border-radius:24px;
+  background:#ffffff;
+  padding:22px;
+  box-shadow:0 10px 22px rgba(16,42,67,.06);
+}
+
+.bloque-editor h3,
+.bloque-buscador h3{
+  margin:0 0 10px;
+  color:#072f57;
+  font-size:1.2rem;
+}
+
+.ayuda-editor{
+  margin:0 0 18px;
+  color:#486581;
+  line-height:1.55;
+  font-size:.95rem;
+}
+
+.pasos-libres{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.paso-libre{
+  border:2px solid #d9e2ec;
+  border-radius:20px;
+  background:#fbfdff;
+  padding:14px;
+  cursor:pointer;
+  min-height:230px;
+  display:flex;
+  flex-direction:column;
+  transition:.18s ease;
+}
+
+.paso-libre.activo{
+  border-color:#0f766e;
+  box-shadow:0 0 0 4px rgba(15,118,110,.14);
+  background:#f0fdfa;
+}
+
+.paso-libre:hover{
+  border-color:#0f766e;
+}
+
+.paso-superior{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.numero-paso{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:34px;
+  height:34px;
+  border-radius:999px;
+  background:#e6f4f1;
+  color:#0f766e;
+  font-weight:900;
+  font-size:.9rem;
+}
+
+.acciones-paso{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+
+.cambiar-paso,
+.quitar-paso,
+.acciones-paso button[data-accion="cambiar"],
+.acciones-paso button[data-accion="quitar"]{
+  appearance:none;
+  -webkit-appearance:none;
+  border:0;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  padding:7px 10px;
+  font-weight:900;
+  font-family:inherit;
+  font-size:.78rem;
+  line-height:1;
+}
+
+.cambiar-paso,
+.acciones-paso button[data-accion="cambiar"]{
+  background:#e6f4f1;
+  color:#0f766e;
+  border:1px solid rgba(15,118,110,.18);
+}
+
+.cambiar-paso:hover,
+.acciones-paso button[data-accion="cambiar"]:hover{
+  background:#d9f2ec;
+  color:#0b4f4a;
+}
+
+.paso-libre.activo .cambiar-paso,
+.paso-libre.activo .acciones-paso button[data-accion="cambiar"]{
+  background:#0f766e;
+  color:#ffffff;
+  border-color:#0f766e;
+  box-shadow:0 8px 18px rgba(15,118,110,.18);
+}
+
+.quitar-paso,
+.acciones-paso button[data-accion="quitar"]{
+  background:#fff4d6;
+  color:#8a5a00;
+  border:1px solid rgba(138,90,0,.14);
+}
+
+.quitar-paso:hover,
+.acciones-paso button[data-accion="quitar"]:hover{
+  background:#ffe8a3;
+}
+
+.marco-paso{
+  min-height:118px;
+  border:1px dashed #bcccdc;
+  border-radius:16px;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+  margin-bottom:12px;
+}
+
+.marco-paso img{
+  width:100%;
+  max-height:108px;
+  object-fit:contain;
+}
+
+.placeholder-paso{
+  margin:0;
+  color:#627d98;
+  font-weight:900;
+  text-align:center;
+  line-height:1.4;
+  font-size:.9rem;
+}
+
+.texto-paso{
+  width:100%;
+  min-height:42px;
+  border:1px solid #d9e2ec;
+  border-radius:14px;
+  padding:0 10px;
+  font:inherit;
+  color:#102a43;
+  background:#ffffff;
+  margin-top:auto;
+}
+
+.buscador-arasaac{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  margin-top:16px;
+  align-items:end;
+}
+
+.resultados-arasaac{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:18px;
+  max-height:520px;
+  overflow:auto;
+  padding-right:4px;
+}
+
+.opcion-picto{
+  border:1px solid #d9e2ec;
+  border-radius:16px;
+  background:#fbfdff;
+  padding:10px;
+  cursor:pointer;
+  font-family:inherit;
+  text-align:center;
+}
+
+.opcion-picto:hover{
+  border-color:#0f766e;
+  box-shadow:0 0 0 3px rgba(15,118,110,.12);
+  background:#f0fdfa;
+}
+
+.opcion-picto img{
+  width:100%;
+  height:88px;
+  object-fit:contain;
+  display:block;
+  margin-bottom:8px;
+}
+
+.opcion-picto span{
+  display:block;
+  color:#486581;
+  font-size:.78rem;
+  font-weight:900;
+  line-height:1.25;
+}
+
+.estado-busqueda{
+  margin:14px 0 0;
+  color:#486581;
+  line-height:1.5;
+  font-size:.94rem;
+}
+
+.rutina-preview{
+  margin-top:30px;
+  padding:26px;
+  border:1px solid #d9e2ec;
+  border-radius:26px;
+  background:#ffffff;
+  box-shadow:0 18px 42px rgba(16,42,67,.12);
+}
+
+.rutina-preview h2{
+  margin:0 0 18px;
+  color:#072f57;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:2rem;
+}
+
+.rutina-lienzo{
+  background:#ffffff;
+  border:2px solid #d9e2ec;
+  border-radius:22px;
+  padding:24px;
+}
+
+.rutina-titulo{
+  text-align:center;
+  margin:0 0 22px;
+  color:#072f57;
+  font-size:2rem;
+  font-weight:900;
+}
+
+.rutina-secuencia{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.rutina-item{
+  border:2px solid #d9e2ec;
+  border-radius:18px;
+  padding:14px;
+  text-align:center;
+  background:#fbfdff;
+  min-height:190px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.rutina-item img{
+  width:100%;
+  height:120px;
+  object-fit:contain;
+}
+
+.rutina-item p{
+  margin:10px 0 0;
+  color:#072f57;
+  font-weight:900;
+  font-size:1rem;
+  line-height:1.3;
+}
+
+.rutina-atribucion{
+  margin:22px 0 0;
+  padding-top:14px;
+  border-top:1px solid #d9e2ec;
+  color:#486581;
+  font-size:.82rem;
+  line-height:1.45;
+  text-align:center;
+}
+
+.acciones-descarga{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.licencia-rutina{
+  margin-top:20px;
+  padding:16px 18px;
+  border-radius:20px;
+  background:#f0fdfa;
+  border:1px solid rgba(15,118,110,.18);
+  color:#486581;
+  line-height:1.65;
+  font-size:.94rem;
+}
+
+.licencia-rutina strong{
+  color:#0f766e;
+}
+
+[hidden]{
+  display:none !important;
+}
+
+/* Corrección puntual de legibilidad en alto contraste */
+html.eva-alto-contraste .panel-rutinas,
+html.eva-alto-contraste .configuracion-rutina,
+html.eva-alto-contraste .campo-configuracion,
+html.eva-alto-contraste .zona-construccion,
+html.eva-alto-contraste .bloque-editor,
+html.eva-alto-contraste .bloque-buscador,
+html.eva-alto-contraste .paso-libre,
+html.eva-alto-contraste .paso-libre.activo,
+html.eva-alto-contraste .marco-paso,
+html.eva-alto-contraste .opcion-picto,
+html.eva-alto-contraste .rutina-preview,
+html.eva-alto-contraste .rutina-lienzo,
+html.eva-alto-contraste .rutina-item,
+html.eva-alto-contraste .licencia-rutina{
+  color:#ffffff !important;
+  background:#000000 !important;
+  border-color:#ffffff !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+}
+
+html.eva-alto-contraste .texto-panel-rutinas,
+html.eva-alto-contraste .campo-configuracion label,
+html.eva-alto-contraste .buscador-arasaac label,
+html.eva-alto-contraste .bloque-editor h3,
+html.eva-alto-contraste .bloque-buscador h3,
+html.eva-alto-contraste .ayuda-editor,
+html.eva-alto-contraste .placeholder-paso,
+html.eva-alto-contraste .opcion-picto span,
+html.eva-alto-contraste .estado-busqueda,
+html.eva-alto-contraste .rutina-preview h2,
+html.eva-alto-contraste .rutina-titulo,
+html.eva-alto-contraste .rutina-item p,
+html.eva-alto-contraste .rutina-atribucion,
+html.eva-alto-contraste .licencia-rutina,
+html.eva-alto-contraste .licencia-rutina strong{
+  color:#ffffff !important;
+  background:transparent !important;
+  text-shadow:none !important;
+  opacity:1 !important;
+}
+
+html.eva-alto-contraste .campo-configuracion select,
+html.eva-alto-contraste .campo-configuracion input,
+html.eva-alto-contraste .buscador-arasaac input,
+html.eva-alto-contraste .texto-paso{
+  color:#ffffff !important;
+  background:#000000 !important;
+  border-color:#ffffff !important;
+}
+
+html.eva-alto-contraste .campo-configuracion input::placeholder,
+html.eva-alto-contraste .buscador-arasaac input::placeholder,
+html.eva-alto-contraste .texto-paso::placeholder{
+  color:#d1d5db !important;
+}
+
+html.eva-alto-contraste .boton-rutina,
+html.eva-alto-contraste .numero-paso,
+html.eva-alto-contraste .cambiar-paso,
+html.eva-alto-contraste .quitar-paso,
+html.eva-alto-contraste .acciones-paso button[data-accion="cambiar"],
+html.eva-alto-contraste .acciones-paso button[data-accion="quitar"]{
+  color:#ffff00 !important;
+  background:#07324a !important;
+  border:1px solid #ffff00 !important;
+  box-shadow:none !important;
+}
+
+html.eva-alto-contraste .paso-libre.activo,
+html.eva-alto-contraste .paso-libre:focus-within,
+html.eva-alto-contraste .opcion-picto:hover,
+html.eva-alto-contraste .opcion-picto:focus{
+  background:#07324a !important;
+  border-color:#ffff00 !important;
+}
+
+html.eva-alto-contraste .marco-paso img,
+html.eva-alto-contraste .opcion-picto img,
+html.eva-alto-contraste .rutina-item img{
+  background:#ffffff !important;
+  border-radius:12px;
+}
+
+@media (max-width:1000px){
+  .configuracion-rutina{
+    grid-template-columns:1fr;
+  }
+
+  .zona-construccion{
+    grid-template-columns:1fr;
+  }
+
+  .rutina-secuencia{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media (max-width:700px){
+  .logo-crebe{
+    width:68px;
+    max-width:68px;
+    height:68px;
+    max-height:68px;
+  }
+
+  .panel-rutinas{
+    padding:26px 20px 30px;
+  }
+
+  .pasos-libres{
+    grid-template-columns:1fr;
+  }
+
+  .buscador-arasaac{
+    grid-template-columns:1fr;
+  }
+
+  .resultados-arasaac{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .rutina-secuencia{
+    grid-template-columns:1fr;
+  }
+
+  .acciones-descarga{
+    flex-direction:column;
+  }
+
+  .boton-rutina{
+    width:100%;
+  }
+}

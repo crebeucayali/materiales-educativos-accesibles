@@ -1,0 +1,40 @@
+@import url("../estilos.css?v=22");
+
+/* Refuerzo puntual: alto contraste en Pictogramas MEA */
+html.eva-alto-contraste body .panel-busqueda,
+html.eva-alto-contraste body .campo-picto,
+html.eva-alto-contraste body .licencia-visible,
+html.eva-alto-contraste body .tarjeta-picto,
+html.eva-alto-contraste body .marco-picto,
+html.eva-alto-contraste body .estado-vacio,
+html.eva-alto-contraste body .mensaje-error{
+  color:#ffffff!important;
+  background:#000000!important;
+  border-color:#ffffff!important;
+  box-shadow:none!important;
+  opacity:1!important;
+}
+
+html.eva-alto-contraste body .ayuda,
+html.eva-alto-contraste body .contador,
+html.eva-alto-contraste body .licencia-visible,
+html.eva-alto-contraste body .licencia-visible strong,
+html.eva-alto-contraste body .tarjeta-picto h3,
+html.eva-alto-contraste body .tarjeta-picto p,
+html.eva-alto-contraste body .estado-vacio h3,
+html.eva-alto-contraste body .estado-vacio p,
+html.eva-alto-contraste body .mensaje-error h3,
+html.eva-alto-contraste body .mensaje-error p{
+  color:#ffffff!important;
+  background:transparent!important;
+  text-shadow:none!important;
+  opacity:1!important;
+}
+
+html.eva-alto-contraste body .boton-picto,
+html.eva-alto-contraste body .descargar-png,
+html.eva-alto-contraste body .abrir-original{
+  color:#ffff00!important;
+  background:#07324a!important;
+  border:1px solid #ffff00!important;
+}

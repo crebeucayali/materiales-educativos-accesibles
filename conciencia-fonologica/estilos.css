@@ -1,0 +1,58 @@
+@import url("../estilos.css?v=22");
+
+.logo-crebe{
+  width:80px;
+  max-width:80px;
+  height:80px;
+  max-height:80px;
+  object-fit:contain;
+}
+
+html.eva-alto-contraste body .panel-generador,
+html.eva-alto-contraste body .configuracion-silabas,
+html.eva-alto-contraste body .vista-silabas,
+html.eva-alto-contraste body .hoja-ficha,
+html.eva-alto-contraste body .bloque-ficha,
+html.eva-alto-contraste body .imagen-ficha{
+  color:#ffffff!important;
+  background:#000000!important;
+  border-color:#ffffff!important;
+  box-shadow:none!important;
+  opacity:1!important;
+}
+
+html.eva-alto-contraste body .texto-panel-silabas,
+html.eva-alto-contraste body .grupo-formulario label,
+html.eva-alto-contraste body .grupo-opciones p,
+html.eva-alto-contraste body .nota-campo,
+html.eva-alto-contraste body .opcion-ficha,
+html.eva-alto-contraste body .bloque-ficha h3,
+html.eva-alto-contraste body .bloque-ficha p,
+html.eva-alto-contraste body .palabra-principal,
+html.eva-alto-contraste body .actividad-linea,
+html.eva-alto-contraste body .pie-ficha{
+  color:#ffffff!important;
+  background:transparent!important;
+  text-shadow:none!important;
+  opacity:1!important;
+}
+
+html.eva-alto-contraste body .boton-secundario,
+html.eva-alto-contraste body .boton-primario,
+html.eva-alto-contraste body .etiqueta-ficha,
+html.eva-alto-contraste body .chip-silaba,
+html.eva-alto-contraste body .casilla-silaba,
+html.eva-alto-contraste body .caja-recorte{
+  color:#ffff00!important;
+  background:#07324a!important;
+  border:1px solid #ffff00!important;
+}
+
+@media (max-width:700px){
+  .logo-crebe{
+    width:68px;
+    max-width:68px;
+    height:68px;
+    max-height:68px;
+  }
+}
