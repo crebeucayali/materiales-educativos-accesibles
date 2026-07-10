@@ -34,7 +34,7 @@ a{color:inherit;}
 .enlaces-cabecera{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:12px;}
 .enlace-cabecera{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 22px;border:1px solid rgba(255,255,255,.45);border-radius:999px;color:var(--blanco);text-decoration:none;font-size:1rem;font-weight:800;background:rgba(255,255,255,.08);}
 .enlace-cabecera:hover{color:var(--blanco);background:rgba(255,255,255,.16);}
-.cabecera .enlace-cabecera[href="https://crebeucayali.github.io/inicio/"]:not(:first-child){display:none;}
+.cabecera .enlace-cabecera[href="https://crebeucayali.github.io/"]:not(:first-child){display:none;}
 .cabecera .enlace-cabecera[href*="accesos-complementarios/institucional/contacto.html"]{font-size:0;}
 .cabecera .enlace-cabecera[href*="accesos-complementarios/institucional/contacto.html"]::after{content:"Contacto Institucional";font-size:1rem;}
 
