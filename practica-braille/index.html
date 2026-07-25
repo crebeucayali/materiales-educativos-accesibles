@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Práctica interactiva inicial del sistema Braille dentro de Materiales Educativos Accesibles del CREBE Ucayali.">
+  <meta name="author" content="Gabriel Berrospi">
+  <title>Práctica del sistema Braille | MEA</title>
+  <link rel="stylesheet" href="../estilos.css?v=17">
+  <link rel="stylesheet" href="https://crebe-ucayali.github.io/accesos-complementarios/accesibilidad/accesibilidad.css?v=7">
+  <link rel="stylesheet" href="estilos.css?v=8">
+  <link rel="stylesheet" href="constancia.css?v=2">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+  <header class="cabecera cabecera-braille">
+    <div class="patron-portada" aria-hidden="true"></div>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="marca marca-institucional" href="../index.html" aria-label="Volver al inicio de Materiales Educativos Accesibles">
+        <img class="marca-logo-superior" src="https://crebe-ucayali.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <span class="marca-texto-superior"><span class="marca-modulo">Materiales Educativos Accesibles</span><span class="marca-nombre-institucional">CREBE "Señor de los Milagros" - Ucayali</span><span class="marca-detalle-institucional">Centro de Recursos de Educación Básica Especial</span></span>
+      </a>
+      <div class="enlaces-cabecera"><a class="enlace-cabecera" href="../index.html">Volver a MEA</a><a class="enlace-cabecera" href="https://crebe-ucayali.github.io/">Inicio principal</a><a class="enlace-cabecera" href="https://crebe-ucayali.github.io/accesos-complementarios/paginas/contacto.html">Contacto</a></div>
+    </nav>
+    <div class="portada"><p class="etiqueta">RECURSO INTERACTIVO ACCESIBLE</p><h1>Práctica del sistema Braille</h1><p class="subtitulo">Practica la relación entre letras y signos Braille en orientación de lectura o de escritura invertida en regleta.</p></div>
+  </header>
+
+  <main id="contenido-principal" class="practica-contenido">
+    <section class="panel-practica" aria-labelledby="titulo-practica">
+      <div class="acciones-practica" style="justify-content:flex-start;margin-top:0;margin-bottom:18px">
+        <a class="boton-secundario" href="../index.html#practicas-braille" aria-label="Volver a elegir el nivel de dificultad de la práctica Braille">← Volver a elegir nivel de dificultad</a>
+      </div>
+
+      <div class="encabezado-practica">
+        <div><p class="sobretitulo">Nivel inicial</p><h2 id="titulo-practica">Lectura: signo a letra</h2><p id="instruccion">Observa el signo Braille y selecciona la letra que representa.</p></div>
+        <div class="progreso" aria-label="Progreso"><span>Ejercicio <strong id="numero-ejercicio">1</strong> de <strong id="total-ejercicios">10</strong></span><span>Aciertos: <strong id="aciertos">0</strong></span></div>
+      </div>
+
+      <div class="controles-practica" aria-label="Configuración de la práctica">
+        <fieldset class="selector-modo"><legend>Orientación</legend><label><input type="radio" name="modo" value="lectura" checked> <span>Lectura</span></label><label><input type="radio" name="modo" value="escritura"> <span>Escritura en regleta</span></label></fieldset>
+        <fieldset class="selector-modo"><legend>Tipo de ejercicio</legend><label><input type="radio" name="tipo" value="signo-letra" checked> <span>Signo → letra</span></label><label><input type="radio" name="tipo" value="letra-signo"> <span>Letra → signo</span></label></fieldset>
+        <div id="control-ayuda" class="control-opcion ayuda-encendida"><div><h3>Ayuda</h3><p id="descripcion-ayuda">Las pistas están disponibles.</p></div><label class="interruptor-ayuda" for="interruptor-ayuda"><input id="interruptor-ayuda" type="checkbox" checked><span class="interruptor-pista" aria-hidden="true"></span><span id="estado-ayuda">Activada</span></label></div>
+        <div id="control-numeros" class="control-opcion numeros-encendidos"><div><h3>Numeración de puntos</h3><p id="descripcion-numeros">Los números están visibles.</p></div><label class="interruptor-ayuda" for="interruptor-numeros"><input id="interruptor-numeros" type="checkbox" checked><span class="interruptor-pista" aria-hidden="true"></span><span id="estado-numeros">Visible</span></label></div>
+      </div>
+
+      <div id="aviso-orientacion" class="aviso-orientacion" role="note"><strong id="titulo-orientacion">Orientación de lectura</strong><span id="texto-orientacion">Puntos 1, 2 y 3 a la izquierda; puntos 4, 5 y 6 a la derecha.</span></div>
+
+      <div class="zona-ejercicio emparejamiento">
+        <section class="panel-respuesta" aria-labelledby="titulo-panel-izquierdo">
+          <p id="etiqueta-panel-izquierdo" class="etiqueta-reto">Opciones de letras</p>
+          <h3 id="titulo-panel-izquierdo">Elige la letra correcta</h3>
+          <div id="letra-objetivo" class="letra-objetivo" hidden>A</div>
+          <div id="opciones-letras" class="opciones-letras" aria-label="Opciones de letras"></div>
+        </section>
+
+        <section class="panel-signo" aria-labelledby="titulo-panel-derecho">
+          <p id="etiqueta-panel-derecho" class="etiqueta-reto">Signo a identificar</p>
+          <h3 id="titulo-panel-derecho">Observa el signo Braille</h3>
+          <div id="signo-principal" class="signo-principal"></div>
+          <div id="opciones-signos" class="opciones-signos" aria-label="Opciones de signos Braille" hidden></div>
+        </section>
+      </div>
+
+      <div class="apoyo-ejercicio">
+        <p id="titulo-reto" class="ayuda-reto">Relaciona ambos lados y selecciona una respuesta.</p>
+        <div id="contenedor-pista"><button id="boton-pista" class="boton-secundario" type="button">Escuchar pista</button></div>
+        <p id="mensaje-sin-ayuda" class="mensaje-sin-ayuda" hidden>Modo sin ayuda activado. Resuelve el ejercicio sin pistas.</p>
+      </div>
+
+      <div class="acciones-practica"><button id="boton-comprobar" class="boton-principal" type="button">Comprobar respuesta</button><button id="boton-siguiente" class="boton-principal" type="button" disabled>Siguiente ejercicio</button><a class="boton-secundario" href="../index.html#practicas-braille" aria-label="Volver a elegir el nivel de dificultad de la práctica Braille">Volver a elegir nivel de dificultad</a></div>
+      <div id="resultado" class="resultado" role="status" aria-live="polite">Selecciona una respuesta y comprueba.</div>
+
+      <section id="panel-constancia" class="panel-constancia" aria-labelledby="titulo-panel-constancia" hidden>
+        <p class="sobretitulo">Logro alcanzado</p>
+        <h2 id="titulo-panel-constancia">Genera tu constancia simbólica</h2>
+        <p>Completaste correctamente los 10 ejercicios. Puedes aparecer con un identificador anónimo o usar voluntariamente tu nombre.</p>
+        <fieldset class="opciones-identidad">
+          <legend>¿Cómo deseas aparecer en la constancia?</legend>
+          <label class="opcion-identidad"><input type="radio" name="identidad-constancia" value="anonimo" checked><span>Usar un identificador anónimo predeterminado.</span></label>
+          <label class="opcion-identidad"><input type="radio" name="identidad-constancia" value="nombre"><span>Usar voluntariamente mi nombre.</span></label>
+        </fieldset>
+        <div id="campo-nombre-opcional" class="campo-constancia" hidden><label for="nombre-constancia">Nombre del participante</label><input id="nombre-constancia" type="text" maxlength="80" autocomplete="name" placeholder="Escribe tu nombre completo"></div>
+        <label class="opcion-consentimiento"><input id="consentimiento-registro" type="checkbox"><span>Autorizo el registro de los datos de uso de esta actividad con fines estadísticos y de mejora educativa. El registro puede realizarse mediante un identificador anónimo.</span></label>
+        <p class="aviso-privacidad">No se solicitan correo electrónico, documento de identidad, teléfono ni datos de contacto. La constancia puede generarse aunque no autorices el registro estadístico.</p>
+        <div class="acciones-constancia"><button id="generar-constancia" class="boton-principal" type="button">Generar constancia simbólica</button></div>
+        <p id="estado-registro" class="estado-registro" role="status" aria-live="polite"></p>
+        <p class="aviso-simbolico"><strong>Importante:</strong> este documento es simbólico, educativo y motivacional. No constituye certificado oficial, acreditación académica ni constancia institucional de capacitación.</p>
+      </section>
+    </section>
+
+    <section class="panel-informativo" aria-labelledby="titulo-aprender"><div><p class="sobretitulo">Conoce el sistema</p><h2 id="titulo-aprender">Dos ejercicios en cada orientación</h2></div><p>Tanto en lectura como en escritura en regleta puedes practicar de signo a letra o de letra a signo. La única diferencia es la orientación: lectura normal de izquierda a derecha y escritura en regleta con disposición horizontal invertida.</p></section>
+    <section class="aviso-pedagogico aviso-braille" aria-labelledby="titulo-aviso-braille"><div class="aviso-icono" aria-hidden="true">i</div><div><h2 id="titulo-aviso-braille">Orientación pedagógica</h2><p>Esta actividad funciona como apoyo visual introductorio. No reemplaza el aprendizaje táctil ni la práctica directa con regleta, punzón y papel adecuado.</p></div></section>
+  </main>
+
+  <dialog id="dialogo-constancia" class="dialogo-constancia" aria-labelledby="titulo-constancia">
+    <div class="constancia-contenedor">
+      <div class="constancia-acciones"><button id="imprimir-constancia" class="boton-principal" type="button">Imprimir o guardar en PDF</button><button id="cerrar-constancia" class="boton-secundario" type="button">Cerrar</button></div>
+      <article class="constancia">
+        <p class="constancia-marca">Ecosistema Virtual Accesible · CREBE Ucayali</p>
+        <h2 id="titulo-constancia">Constancia simbólica de participación</h2>
+        <p class="constancia-subtitulo">Práctica interactiva del sistema Braille</p>
+        <p>Se reconoce a:</p>
+        <p id="constancia-nombre" class="constancia-nombre">Participante</p>
+        <p class="constancia-texto">por completar satisfactoriamente los diez ejercicios de reconocimiento inicial de letras y signos Braille, alcanzando el 100 % de respuestas correctas.</p>
+        <p class="constancia-logro">Logro motivacional: Explorador Braille</p>
+        <div class="constancia-datos"><span><strong>Fecha:</strong> <span id="constancia-fecha"></span></span><span><strong>Código:</strong> <span id="constancia-codigo"></span></span></div>
+        <p class="constancia-nota">Documento simbólico de carácter educativo y motivacional. No constituye certificado oficial, acreditación académica ni constancia institucional de capacitación.</p>
+      </article>
+    </div>
+  </dialog>
+
+  <footer aria-label="Pie de página institucional">
+    <div class="footer-contenido">
+      <section class="footer-bloque footer-marca" aria-labelledby="footer-titulo-practica">
+        <img class="footer-logo" src="https://crebe-ucayali.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <div><h2 id="footer-titulo-practica">Práctica del sistema Braille</h2><p>Recurso educativo interactivo del módulo Materiales Educativos Accesibles.</p></div>
+      </section>
+      <nav class="footer-bloque" aria-labelledby="footer-enlaces-practica">
+        <h2 id="footer-enlaces-practica">Enlaces de MEA</h2>
+        <p><a href="../index.html">Volver a Materiales Educativos Accesibles</a><br><a href="../generador/generador.html">Abrir Generador Braille</a><br><a href="https://crebe-ucayali.github.io/">Inicio principal</a></p>
+      </nav>
+      <section class="footer-bloque" aria-labelledby="footer-contacto-practica">
+        <h2 id="footer-contacto-practica">Contacto CREBE</h2>
+        <p>CREBE "Señor de los Milagros" - Ucayali<br>Centro de Recursos de Educación Básica Especial<br><a href="https://crebe-ucayali.github.io/accesos-complementarios/paginas/contacto.html">Contacto Institucional</a></p>
+      </section>
+    </div>
+    <div class="footer-final">
+      <p>© 2026 Gabriel Berrospi. Desarrollo original del Ecosistema Virtual Accesible (EVA).</p>
+      <p>Uso institucional autorizado al CREBE "Señor de los Milagros" - Ucayali mediante Licencia de Uso Institucional No Exclusiva. La autorización de uso no implica cesión de titularidad ni transferencia de derechos patrimoniales.</p>
+    </div>
+  </footer>
+
+  <script src="practica.js?v=7" defer></script>
+  <script src="constancia.js?v=2" defer></script>
+  <script src="https://crebe-ucayali.github.io/accesos-complementarios/accesibilidad/accesibilidad.js?v=7" defer></script>
+</body>
+</html>

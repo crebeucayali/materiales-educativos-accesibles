@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://crebeucayali.github.io/materiales-educativos-accesibles/sitemap.xml
+Sitemap: https://crebe-ucayali.github.io/materiales-educativos-accesibles/sitemap.xml

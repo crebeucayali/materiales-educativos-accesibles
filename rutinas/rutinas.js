@@ -59,7 +59,7 @@ function agregarContactoCabecera(){
     return;
   }
 
-  const contactoUrl = "https://gabriel-lsp.github.io/accesos-complementarios/contacto.html";
+  const contactoUrl = "https://crebe-ucayali.github.io/accesos-complementarios/paginas/contacto.html";
   const enlaceExistente = navegacion.querySelector(`a[href="${contactoUrl}"], a[href="contacto.html"]`);
 
   if(enlaceExistente){

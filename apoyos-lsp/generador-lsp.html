@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generador educativo de nombres y hasta tres palabras con recursos visuales de Lengua de Señas Peruana y descarga en PDF.">
+  <title>Generador de nombres en LSP | Materiales Educativos Accesibles</title>
+  <link rel="stylesheet" href="https://crebe-ucayali.github.io/accesos-complementarios/accesibilidad/accesibilidad.css?v=7">
+  <link rel="stylesheet" href="generador-lsp.css?v=2">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <header class="cabecera">
+    <div class="patron-portada" aria-hidden="true"></div>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="marca marca-institucional" href="../index.html" aria-label="Volver al inicio de Materiales Educativos Accesibles">
+        <img class="marca-logo-superior" src="https://crebe-ucayali.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+        <span class="marca-texto-superior">
+          <span class="marca-modulo">Materiales Educativos Accesibles</span>
+          <span class="marca-nombre-institucional">CREBE "Señor de los Milagros" - Ucayali</span>
+          <span class="marca-detalle-institucional">Centro de Recursos de Educación Básica Especial</span>
+        </span>
+      </a>
+      <div class="enlaces-cabecera">
+        <a class="enlace-cabecera" href="../index.html">Volver a MEA</a>
+        <a class="enlace-cabecera" href="https://crebe-ucayali.github.io/">Inicio principal</a>
+        <a class="enlace-cabecera" href="https://crebe-ucayali.github.io/accesos-complementarios/paginas/contacto.html">Contacto</a>
+      </div>
+    </nav>
+    <div class="portada">
+      <p class="etiqueta">APOYO EN LENGUA DE SEÑAS PERUANA</p>
+      <h1>Generador de nombres y palabras en LSP</h1>
+      <p class="subtitulo">Escribe un nombre completo o hasta tres palabras. La herramienta buscará señas disponibles en el diccionario visual y utilizará el alfabeto dactilológico cuando sea necesario.</p>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="generador" aria-labelledby="titulo-generador">
+      <div class="panel-formulario">
+        <p class="seccion-etiqueta">Crear material</p>
+        <h2 id="titulo-generador">Escribe el nombre o las palabras</h2>
+        <div class="campo">
+          <label for="texto-senas">Nombre completo o hasta tres palabras</label>
+          <input id="texto-senas" type="text" maxlength="60" autocomplete="off" placeholder="Ejemplo: Gabriel Berrospi Maylle">
+          <p class="ayuda-campo">Se admiten letras, espacios y la letra ñ. Cada palabra ocupará una fila en el PDF horizontal.</p>
+        </div>
+        <div class="grupo-botones">
+          <button id="generar" class="boton-principal" type="button">Generar señas</button>
+          <button id="limpiar" class="boton-secundario" type="button">Limpiar</button>
+          <button id="descargar" class="boton-descarga" type="button" disabled>Descargar en PDF</button>
+        </div>
+        <p id="estado" class="estado" role="status" aria-live="polite">Preparando el banco de señas…</p>
+      </div>
+
+      <section id="ficha" class="ficha" aria-labelledby="titulo-ficha">
+        <div class="ficha-cabecera">
+          <img src="https://crebe-ucayali.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo del CREBE Señor de los Milagros - Ucayali">
+          <div>
+            <p>Materiales Educativos Accesibles</p>
+            <h2 id="titulo-ficha">Mi nombre o palabra en Lengua de Señas Peruana</h2>
+          </div>
+        </div>
+        <p id="texto-original" class="texto-original">Escribe un texto para generar el recurso.</p>
+        <div id="resultado" class="resultado" aria-live="polite"></div>
+        <p class="nota-ficha">Recurso visual de apoyo educativo. La Lengua de Señas Peruana posee estructura lingüística propia; el deletreo dactilológico se emplea principalmente para nombres propios o palabras sin una seña registrada en el banco visual.</p>
+        <p class="credito-ficha">Fuente de las imágenes: Ministerio de Educación del Perú, Guía de Lengua de Señas Peruana. Uso educativo y no comercial.</p>
+      </section>
+    </section>
+
+    <section class="orientacion" aria-labelledby="titulo-orientacion">
+      <h2 id="titulo-orientacion">Cómo funciona</h2>
+      <p>La herramienta consulta el diccionario visual de Lengua de Señas Peruana del Banco Digital Accesible. Cuando encuentra una coincidencia exacta, muestra la seña completa. Para nombres propios o términos no registrados, construye el deletreo mediante las letras disponibles en el alfabeto manual. Se permite un máximo de tres palabras para conservar la legibilidad en una sola hoja A4 horizontal.</p>
+    </section>
+  </main>
+
+  <footer class="footer-crebe" aria-label="Pie de página institucional">
+    <div class="footer-contenido footer-contenedor">
+      <section class="footer-bloque footer-columna" aria-labelledby="footer-sobre"><h2 id="footer-sobre">Sobre esta herramienta</h2><p>Material educativo para generar apoyos visuales con señas disponibles y deletreo dactilológico de nombres o palabras.</p></section>
+      <nav class="footer-bloque footer-columna" aria-labelledby="footer-enlaces"><h2 id="footer-enlaces">Enlaces</h2><p><a href="../index.html">Materiales Educativos Accesibles</a><br><a href="https://crebe-ucayali.github.io/banco-digital-accesible/lsp/">Diccionario de Lengua de Señas Peruana</a><br><a href="https://crebe-ucayali.github.io/">Inicio principal</a></p></nav>
+      <section class="footer-bloque footer-columna contacto-footer" aria-labelledby="footer-contacto"><h2 id="footer-contacto">Contacto</h2><p><a href="https://crebe-ucayali.github.io/accesos-complementarios/paginas/contacto.html">Contacto institucional</a><br>CREBE "Señor de los Milagros" - Ucayali</p></section>
+    </div>
+    <div class="footer-final"><p>© 2026 Gabriel Berrospi. Desarrollo original. Uso institucional autorizado al CREBE "Señor de los Milagros" - Ucayali.</p></div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  <script src="generador-lsp.js?v=2" defer></script>
+  <script src="https://crebe-ucayali.github.io/accesos-complementarios/accesibilidad/accesibilidad.js?v=7" defer></script>
+</body>
+</html>

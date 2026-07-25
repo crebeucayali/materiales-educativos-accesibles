@@ -1,0 +1,79 @@
+[
+  {
+    "id": "mea-inicio",
+    "titulo": "Materiales Educativos Accesibles",
+    "modulo": "MEA",
+    "categoria": "Materiales",
+    "tipo": "Módulo",
+    "descripcion": "Repositorio digital de recursos pedagógicos para la inclusión, la accesibilidad y la atención a la diversidad.",
+    "etiquetas": ["materiales", "recursos", "inclusion", "accesibilidad"],
+    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/",
+    "fechaActualizacion": "2026-07-23"
+  },
+  {
+    "id": "mea-generador-braille",
+    "titulo": "Generador Braille",
+    "modulo": "MEA",
+    "categoria": "Braille",
+    "tipo": "Generador",
+    "descripcion": "Escribe letras, números, palabras o frases y obtiene su representación visual en sistema Braille.",
+    "etiquetas": ["braille", "generador", "letras", "numeros"],
+    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/generador/generador.html",
+    "fechaActualizacion": "2026-07-23"
+  },
+  {
+    "id": "mea-practica-braille",
+    "titulo": "Práctica Braille",
+    "modulo": "MEA",
+    "categoria": "Braille",
+    "tipo": "Actividad interactiva",
+    "descripcion": "Práctica básica y progresiva del sistema Braille organizada por niveles de complejidad.",
+    "etiquetas": ["braille", "practica", "niveles", "ejercicios"],
+    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/practica-braille-opciones/",
+    "fechaActualizacion": "2026-07-23"
+  },
+  {
+    "id": "mea-generador-lsp",
+    "titulo": "Generador de nombres y palabras en LSP",
+    "modulo": "MEA",
+    "categoria": "Lengua de Señas Peruana",
+    "tipo": "Generador",
+    "descripcion": "Genera señas disponibles o deletreo dactilológico y permite descargar el resultado en PDF.",
+    "etiquetas": ["lsp", "nombres", "palabras", "dactilologia", "pdf"],
+    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/generador-lsp/",
+    "fechaActualizacion": "2026-07-23"
+  },
+  {
+    "id": "mea-pictogramas",
+    "titulo": "Pictogramas y apoyos visuales",
+    "modulo": "MEA",
+    "categoria": "Pictogramas",
+    "tipo": "Buscador educativo",
+    "descripcion": "Consulta pictogramas de ARASAAC para comunicación, rutinas visuales y accesibilidad cognitiva.",
+    "etiquetas": ["pictogramas", "arasaac", "comunicacion", "apoyos visuales"],
+    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/pictogramas/pictogramas.html",
+    "fechaActualizacion": "2026-07-23"
+  },
+  {
+    "id": "mea-rutinas",
+    "titulo": "Generador de rutinas visuales",
+    "modulo": "MEA",
+    "categoria": "Rutinas visuales",
+    "tipo": "Generador",
+    "descripcion": "Selecciona pictogramas, organiza secuencias y descarga rutinas en PDF o JPG.",
+    "etiquetas": ["rutinas", "secuencias", "pictogramas", "pdf", "jpg"],
+    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/rutinas/rutinas.html",
+    "fechaActualizacion": "2026-07-23"
+  },
+  {
+    "id": "mea-silabas",
+    "titulo": "Generador de sílabas",
+    "modulo": "MEA",
+    "categoria": "Conciencia fonológica",
+    "tipo": "Generador",
+    "descripcion": "Crea fichas de silabeo con apoyo visual, separación silábica y actividades imprimibles.",
+    "etiquetas": ["silabas", "silabeo", "conciencia fonologica", "lectura"],
+    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/conciencia-fonologica/conciencia-fonologica.html",
+    "fechaActualizacion": "2026-07-23"
+  }
+]
