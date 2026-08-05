@@ -222,10 +222,10 @@ function actualizarEnlacesExternos(){
   }
 
   parrafo.innerHTML = `
-    <a href="https://crebe-ucayali.github.io/capacitaciones/">Capacitaciones CREBE</a><br>
-    <a href="https://crebe-ucayali.github.io/banco-digital-accesible/">Banco Digital Accesible</a><br>
-    <a href="https://crebe-ucayali.github.io/juegos-interactivos-accesibles/">Juegos Educativos Accesibles</a><br>
-    <a href="https://crebe-ucayali.github.io/noti-inclusivos/">Noti Inclusivos</a>
+    <a href="https://crebeucayali.github.io/capacitaciones/">Capacitaciones CREBE</a><br>
+    <a href="https://crebeucayali.github.io/banco-digital-accesible/">Banco Digital Accesible</a><br>
+    <a href="https://crebeucayali.github.io/juegos-interactivos-accesibles/">Juegos Educativos Accesibles</a><br>
+    <a href="https://crebeucayali.github.io/noti-inclusivos/">Noti Inclusivos</a>
   `;
 }
 

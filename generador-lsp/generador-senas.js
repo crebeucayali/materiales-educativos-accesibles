@@ -1,5 +1,5 @@
 "use strict";
-const BASE="https://crebe-ucayali.github.io/banco-digital-accesible/lsp/";
+const BASE="https://crebeucayali.github.io/banco-digital-accesible/lsp/";
 const $=s=>document.querySelector(s);
 const ui={entrada:$("#texto-senas"),generar:$("#generar"),limpiar:$("#limpiar"),descargar:$("#descargar"),estado:$("#estado"),resultado:$("#resultado"),texto:$("#texto-original"),ficha:$("#ficha")};
 let banco=[],palabras=new Map(),letras=new Map();

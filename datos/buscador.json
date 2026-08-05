@@ -7,7 +7,7 @@
     "tipo": "Módulo",
     "descripcion": "Repositorio digital de recursos pedagógicos para la inclusión, la accesibilidad y la atención a la diversidad.",
     "etiquetas": ["materiales", "recursos", "inclusion", "accesibilidad"],
-    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/",
+    "url": "https://crebeucayali.github.io/materiales-educativos-accesibles/",
     "fechaActualizacion": "2026-07-23"
   },
   {
@@ -18,7 +18,7 @@
     "tipo": "Generador",
     "descripcion": "Escribe letras, números, palabras o frases y obtiene su representación visual en sistema Braille.",
     "etiquetas": ["braille", "generador", "letras", "numeros"],
-    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/generador/generador.html",
+    "url": "https://crebeucayali.github.io/materiales-educativos-accesibles/generador/generador.html",
     "fechaActualizacion": "2026-07-23"
   },
   {
@@ -29,7 +29,7 @@
     "tipo": "Actividad interactiva",
     "descripcion": "Práctica básica y progresiva del sistema Braille organizada por niveles de complejidad.",
     "etiquetas": ["braille", "practica", "niveles", "ejercicios"],
-    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/practica-braille-opciones/",
+    "url": "https://crebeucayali.github.io/materiales-educativos-accesibles/practica-braille-opciones/",
     "fechaActualizacion": "2026-07-23"
   },
   {
@@ -40,7 +40,7 @@
     "tipo": "Generador",
     "descripcion": "Genera señas disponibles o deletreo dactilológico y permite descargar el resultado en PDF.",
     "etiquetas": ["lsp", "nombres", "palabras", "dactilologia", "pdf"],
-    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/generador-lsp/",
+    "url": "https://crebeucayali.github.io/materiales-educativos-accesibles/generador-lsp/",
     "fechaActualizacion": "2026-07-23"
   },
   {
@@ -51,7 +51,7 @@
     "tipo": "Buscador educativo",
     "descripcion": "Consulta pictogramas de ARASAAC para comunicación, rutinas visuales y accesibilidad cognitiva.",
     "etiquetas": ["pictogramas", "arasaac", "comunicacion", "apoyos visuales"],
-    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/pictogramas/pictogramas.html",
+    "url": "https://crebeucayali.github.io/materiales-educativos-accesibles/pictogramas/pictogramas.html",
     "fechaActualizacion": "2026-07-23"
   },
   {
@@ -62,7 +62,7 @@
     "tipo": "Generador",
     "descripcion": "Selecciona pictogramas, organiza secuencias y descarga rutinas en PDF o JPG.",
     "etiquetas": ["rutinas", "secuencias", "pictogramas", "pdf", "jpg"],
-    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/rutinas/rutinas.html",
+    "url": "https://crebeucayali.github.io/materiales-educativos-accesibles/rutinas/rutinas.html",
     "fechaActualizacion": "2026-07-23"
   },
   {
@@ -73,7 +73,7 @@
     "tipo": "Generador",
     "descripcion": "Crea fichas de silabeo con apoyo visual, separación silábica y actividades imprimibles.",
     "etiquetas": ["silabas", "silabeo", "conciencia fonologica", "lectura"],
-    "url": "https://crebe-ucayali.github.io/materiales-educativos-accesibles/conciencia-fonologica/conciencia-fonologica.html",
+    "url": "https://crebeucayali.github.io/materiales-educativos-accesibles/conciencia-fonologica/conciencia-fonologica.html",
     "fechaActualizacion": "2026-07-23"
   }
 ]
