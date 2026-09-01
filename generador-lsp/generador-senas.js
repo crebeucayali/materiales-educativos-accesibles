@@ -7,7 +7,7 @@ const abc=new Set("abcdefghijklmnñopqrstuvwxyz".split(""));
 function normalizar(t){return String(t||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-zñ\s]/g," ").replace(/\s+/g," ").trim()}
 function ruta(r){return /^https?:/i.test(r||"")?r:BASE+String(r||"").replace(/^\.\//,"")}
 function esLetra(i){const p=normalizar(i.palabra);return p.length===1&&abc.has(p)}
-function preparar(){banco.forEach(i=>{const p=normalizar(i.palabra);if(!p)return;if(esLetra(i)&&!letras.has(p))letras.set(p,i)})}
+function preparar(){banco.forEach(i=>{const p=normalizar(i.palabra);if(!p)return;if(p==="n ñ"){if(!letras.has("n"))letras.set("n",i);if(!letras.has("ñ"))letras.set("ñ",i);return}if(esLetra(i)&&!letras.has(p))letras.set(p,i)})}
 function imagen(item,alt){const img=document.createElement("img");img.src=ruta(item.archivo_imagen);img.alt=alt;img.loading="eager";img.crossOrigin="anonymous";return img}
 function sinImagen(l){const d=document.createElement("div");d.className="letra-no-disponible";d.innerHTML=`<span>${l.toUpperCase()}</span>`;d.setAttribute("aria-label",`Imagen dactilológica no disponible para la letra ${l}`);return d}
 function deletreo(p){const c=document.createElement("div");c.className="deletreo";[...p].forEach(l=>{if(!abc.has(l))return;const t=document.createElement("div");t.className="letra-sena";const i=letras.get(l);t.appendChild(i?imagen(i,`Letra ${l.toUpperCase()} del alfabeto dactilológico peruano`):sinImagen(l));const r=document.createElement("strong");r.textContent=l;t.appendChild(r);c.appendChild(t)});return c}
