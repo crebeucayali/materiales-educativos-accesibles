@@ -4,7 +4,7 @@ const $=s=>document.querySelector(s);
 const ui={entrada:$("#texto-senas"),generar:$("#generar"),limpiar:$("#limpiar"),descargar:$("#descargar"),estado:$("#estado"),resultado:$("#resultado"),texto:$("#texto-original"),ficha:$("#ficha")};
 let banco=[],letras=new Map();
 const abc=new Set("abcdefghijklmnñopqrstuvwxyz".split(""));
-function normalizar(t){return String(t||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-zñ\s]/g," ").replace(/\s+/g," ").trim()}
+function normalizar(t){return String(t||"").toLowerCase().replace(/ñ/g,"\uE000").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\uE000/g,"ñ").replace(/[^a-zñ\s]/g," ").replace(/\s+/g," ").trim()}
 function ruta(r){return /^https?:/i.test(r||"")?r:BASE+String(r||"").replace(/^\.\//,"")}
 function esLetra(i){const p=normalizar(i.palabra);return p.length===1&&abc.has(p)}
 function preparar(){banco.forEach(i=>{const p=normalizar(i.palabra);if(!p)return;if(p==="n ñ"){if(!letras.has("n"))letras.set("n",i);if(!letras.has("ñ"))letras.set("ñ",i);return}if(esLetra(i)&&!letras.has(p))letras.set(p,i)})}
