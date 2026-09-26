@@ -10,3 +10,27 @@ main{position:relative;margin-top:-78px;padding:0 18px 64px}.generador{display:g
 @media(max-width:900px){.generador{grid-template-columns:1fr}.panel-formulario{position:static}.footer-contenido{grid-template-columns:1fr}.sena-completa{grid-template-columns:1fr}.sena-completa img{max-width:300px;margin:auto}}
 @media(max-width:700px){.cabecera{padding:26px 18px 116px}.patron-portada{background-size:260px auto}.navegacion{align-items:flex-start;flex-direction:column}.enlaces-cabecera{justify-content:flex-start}.marca-institucional{align-items:flex-start}.marca-logo-superior{width:52px;height:52px;border-radius:16px}.marca-texto-superior{padding-left:12px}.marca-nombre-institucional{font-size:.94rem}.marca-detalle-institucional{font-size:.82rem}.portada{margin-top:54px}main{margin-top:-58px}.panel-formulario,.ficha,.orientacion{padding:23px;border-radius:22px}.ficha-cabecera{align-items:flex-start}.ficha-cabecera img{width:58px;height:58px}.letra-sena{width:112px;grid-template-rows:112px auto}.letra-sena img{height:110px}}
 @media print{body{background:#fff}.cabecera,.panel-formulario,.orientacion,.footer-crebe{display:none!important}main{margin:0;padding:0}.generador{display:block}.ficha{box-shadow:none;border:0;border-radius:0}}
+
+/* Jerarquía tipográfica Apoyos LSP MEA. */
+.portada h1{
+  font-size:clamp(2rem,3.5vw,3rem);
+  line-height:1.10;
+}
+.panel-formulario h2,
+.orientacion h2{
+  font-size:clamp(1.5rem,2.3vw,1.875rem);
+  line-height:1.20;
+}
+.ficha-cabecera h2{
+  font-size:1.5rem;
+  line-height:1.22;
+}
+.bloque-palabra h3{
+  font-size:1.125rem;
+  line-height:1.30;
+}
+@media(max-width:760px){
+  .portada h1{font-size:clamp(2rem,9vw,2.25rem);}
+  .panel-formulario h2,
+  .orientacion h2{font-size:clamp(1.5rem,6vw,1.6875rem);}
+}
