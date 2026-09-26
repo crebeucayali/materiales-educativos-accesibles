@@ -1,7 +1,12 @@
 const API_BUSQUEDA = "https://api.arasaac.org/api/pictograms/es/search/";
 const URL_IMAGEN = "https://static.arasaac.org/pictograms/";
 const URL_HTML2CANVAS = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
-const URL_JSPDF = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+const URL_JSPDF = "../vendor/jspdf/4.2.1/jspdf.umd.min.js";
+const SRI_HTML2CANVAS = "sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==";
+const DEPENDENCIAS_PERMITIDAS = new Map([
+  [URL_HTML2CANVAS, { integrity:SRI_HTML2CANVAS, crossOrigin:"anonymous", referrerPolicy:"no-referrer" }],
+  [URL_JSPDF, { integrity:"", crossOrigin:"", referrerPolicy:"" }]
+]);
 const scriptsExternos = new Map();
 
 const tituloRutina = document.getElementById("titulo-rutina");
@@ -589,6 +594,11 @@ function esperarImagenes(contenedor){
 }
 
 function cargarScriptExterno(url){
+  const seguridad = DEPENDENCIAS_PERMITIDAS.get(url);
+  if(!seguridad){
+    return Promise.reject(new Error("Dependencia de script no permitida."));
+  }
+
   if(scriptsExternos.has(url)){
     return scriptsExternos.get(url);
   }
@@ -597,17 +607,34 @@ function cargarScriptExterno(url){
     const existente = document.querySelector(`script[src="${url}"]`);
 
     if(existente){
+      if(existente.dataset.cargado === "true"){
+        resolve();
+        return;
+      }
       existente.addEventListener("load", resolve, { once:true });
       existente.addEventListener("error", reject, { once:true });
-      resolve();
       return;
     }
 
     const script = document.createElement("script");
     script.src = url;
     script.async = true;
-    script.onload = resolve;
-    script.onerror = reject;
+
+    if(seguridad.integrity){
+      script.integrity = seguridad.integrity;
+    }
+    if(seguridad.crossOrigin){
+      script.crossOrigin = seguridad.crossOrigin;
+    }
+    if(seguridad.referrerPolicy){
+      script.referrerPolicy = seguridad.referrerPolicy;
+    }
+
+    script.onload = () => {
+      script.dataset.cargado = "true";
+      resolve();
+    };
+    script.onerror = () => reject(new Error(`No se pudo cargar la dependencia: ${url}`));
     document.head.appendChild(script);
   });
 
