@@ -4,7 +4,8 @@ Este archivo lista los documentos de respaldo del repositorio Materiales Educati
 
 - `sustento-del-proyecto-personal.md`: documento central del proyecto personal.
 - `autoria-y-contexto.md`: autoría, contexto de uso y reconocimiento.
-- `fuentes-y-creditos.md`: fuentes, créditos y recursos externos.
+- `fuentes-y-creditos.md`: criterios generales de fuentes, créditos y recursos externos.
+- `../LICENCIAS_RECURSOS_TERCEROS.md`: inventario específico de servicios, bibliotecas, recursos y condiciones de terceros.
 - `uso-permitido.md`: usos permitidos y condiciones generales.
 - `alcance-pedagogico.md`: alcance pedagógico de los materiales.
 - `criterios-de-adaptacion.md`: criterios para elaborar y adaptar materiales accesibles.
