@@ -1,6 +1,6 @@
 const API_BUSQUEDA = "https://api.arasaac.org/api/pictograms/es/search/";
 const URL_IMAGEN = "https://static.arasaac.org/pictograms/";
-const URL_HTML2CANVAS = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
+const URL_HTML2CANVAS = "../vendor/html2canvas/1.4.1/html2canvas.min.js";
 const URL_JSPDF = "../vendor/jspdf/4.2.1/jspdf.umd.min.js";
 const SRI_HTML2CANVAS = "sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==";
 const DEPENDENCIAS_PERMITIDAS = new Map([
