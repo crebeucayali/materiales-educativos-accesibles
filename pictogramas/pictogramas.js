@@ -21,7 +21,7 @@ async function buscarPictogramas(){
     return;
   }
 
-  lista.innerHTML = "";
+  lista.replaceChildren();
   mensajeError.hidden = true;
   estadoVacio.hidden = false;
   estadoVacio.querySelector("h3").textContent = "Buscando pictogramas...";
@@ -39,7 +39,7 @@ async function buscarPictogramas(){
     const resultados = Array.isArray(datos) ? datos.slice(0, 32) : [];
 
     if(resultados.length === 0){
-      lista.innerHTML = "";
+      lista.replaceChildren();
       estadoVacio.hidden = false;
       estadoVacio.querySelector("h3").textContent = "No se encontraron pictogramas";
       estadoVacio.querySelector("p").textContent = "Prueba con otra palabra o una forma más simple.";
@@ -52,7 +52,7 @@ async function buscarPictogramas(){
     renderizarPictogramas(resultados);
   }catch(error){
     console.error(error);
-    lista.innerHTML = "";
+    lista.replaceChildren();
     estadoVacio.hidden = true;
     mensajeError.hidden = false;
     contador.textContent = "Error de búsqueda";
@@ -60,64 +60,54 @@ async function buscarPictogramas(){
 }
 
 function renderizarPictogramas(pictogramas){
-  lista.innerHTML = "";
+  lista.replaceChildren();
 
   pictogramas.forEach(function(picto){
-    const id = picto._id || picto.id;
-
-    if(!id){
+    const idTexto = String(picto._id || picto.id || "").trim();
+    if(!/^\d+$/.test(idTexto)){
       return;
     }
 
     const palabra = obtenerPalabra(picto);
-    const imagen = `${URL_IMAGEN}${id}/${id}_500.png`;
+    const imagen = `${URL_IMAGEN}${idTexto}/${idTexto}_500.png`;
 
     const tarjeta = document.createElement("article");
     tarjeta.className = "tarjeta-picto";
 
-    tarjeta.innerHTML = `
-      <div class="marco-picto">
-        <img
-          src="${imagen}"
-          alt="Pictograma de ${escaparTexto(palabra)}"
-          loading="lazy"
-        >
-      </div>
+    const marco = document.createElement("div");
+    marco.className = "marco-picto";
 
-      <h3>${escaparTexto(palabra)}</h3>
-      <p>
-        Pictograma procedente de ARASAAC. ID: ${id}
-      </p>
+    const img = document.createElement("img");
+    img.src = imagen;
+    img.alt = `Pictograma de ${palabra}`;
+    img.loading = "lazy";
+    marco.appendChild(img);
 
-      <div class="acciones-picto">
-        <button
-          class="descargar-png"
-          type="button"
-          data-url="${imagen}"
-          data-nombre="${crearNombreArchivo(palabra, id)}"
-        >
-          Descargar PNG
-        </button>
+    const titulo = document.createElement("h3");
+    titulo.textContent = palabra;
 
-        <a
-          class="abrir-original"
-          href="${imagen}"
-          target="_blank"
-          rel="noopener"
-        >
-          Ver imagen
-        </a>
-      </div>
-    `;
+    const descripcion = document.createElement("p");
+    descripcion.textContent = `Pictograma procedente de ARASAAC. ID: ${idTexto}`;
 
-    const botonDescarga = tarjeta.querySelector(".descargar-png");
-    botonDescarga.addEventListener("click", function(){
-      descargarImagenPng(
-        botonDescarga.dataset.url,
-        botonDescarga.dataset.nombre
-      );
-    });
+    const acciones = document.createElement("div");
+    acciones.className = "acciones-picto";
 
+    const descargar = document.createElement("button");
+    descargar.className = "descargar-png";
+    descargar.type = "button";
+    descargar.dataset.url = imagen;
+    descargar.dataset.nombre = crearNombreArchivo(palabra, idTexto);
+    descargar.textContent = "Descargar PNG";
+
+    const abrir = document.createElement("a");
+    abrir.className = "abrir-original";
+    abrir.href = imagen;
+    abrir.target = "_blank";
+    abrir.rel = "noopener noreferrer";
+    abrir.textContent = "Abrir imagen";
+
+    acciones.append(descargar, abrir);
+    tarjeta.append(marco, titulo, descripcion, acciones);
     lista.appendChild(tarjeta);
   });
 }
@@ -186,17 +176,8 @@ function normalizarTexto(texto){
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-function escaparTexto(texto){
-  return String(texto)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
 function mostrarEstadoInicial(){
-  lista.innerHTML = "";
+  lista.replaceChildren();
   mensajeError.hidden = true;
   estadoVacio.hidden = false;
   estadoVacio.querySelector("h3").textContent = "Realiza una búsqueda";
@@ -216,17 +197,27 @@ function actualizarEnlacesExternos(){
   }
 
   const parrafo = bloqueEnlaces.querySelector("p");
-
   if(!parrafo){
     return;
   }
 
-  parrafo.innerHTML = `
-    <a href="https://crebeucayali.github.io/capacitaciones/">Capacitaciones CREBE</a><br>
-    <a href="https://crebeucayali.github.io/banco-digital-accesible/">Banco Digital Accesible</a><br>
-    <a href="https://crebeucayali.github.io/juegos-interactivos-accesibles/">Juegos Educativos Accesibles</a><br>
-    <a href="https://crebeucayali.github.io/noti-inclusivos/">Noti Inclusivos</a>
-  `;
+  const enlaces = [
+    ["Capacitaciones CREBE", "https://crebeucayali.github.io/capacitaciones/"],
+    ["Banco Digital Accesible", "https://crebeucayali.github.io/banco-digital-accesible/"],
+    ["Juegos Educativos Accesibles", "https://crebeucayali.github.io/juegos-interactivos-accesibles/"],
+    ["Noti Inclusivos", "https://crebeucayali.github.io/noti-inclusivos/"]
+  ];
+
+  parrafo.replaceChildren();
+  enlaces.forEach(([texto, href], indice) => {
+    const enlace = document.createElement("a");
+    enlace.href = href;
+    enlace.textContent = texto;
+    parrafo.appendChild(enlace);
+    if(indice < enlaces.length - 1){
+      parrafo.appendChild(document.createElement("br"));
+    }
+  });
 }
 
 actualizarEnlacesExternos();
