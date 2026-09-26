@@ -121,50 +121,64 @@ function crearEspacios(){
 }
 
 function renderizarPasos(){
-  pasosLibres.innerHTML = "";
+  pasosLibres.replaceChildren();
 
   pasos.forEach((paso, index) => {
     const tarjeta = document.createElement("article");
     tarjeta.className = `paso-libre ${index === pasoActivo ? "activo" : ""}`;
-    tarjeta.dataset.index = index;
+    tarjeta.dataset.index = String(index);
 
-    const imagenHtml = paso.pictograma
-      ? `
-        <img
-          src="${paso.pictograma.imagen}"
-          alt="Pictograma de ${escaparTexto(paso.pictograma.palabra)}"
-          crossorigin="anonymous"
-        >
-      `
-      : `<p class="placeholder-paso">Selecciona este paso y busca un pictograma</p>`;
+    const superior = document.createElement("div");
+    superior.className = "paso-superior";
+    const numero = document.createElement("span");
+    numero.className = "numero-paso";
+    numero.textContent = `Paso ${index + 1}`;
+    superior.appendChild(numero);
 
-    tarjeta.innerHTML = `
-      <div class="paso-superior">
-        <span class="numero-paso">Paso ${index + 1}</span>
-      </div>
+    const acciones = document.createElement("div");
+    acciones.className = "acciones-paso";
 
-      <div class="acciones-paso">
-        <button class="cambiar-paso" type="button" data-accion="cambiar" data-index="${index}">
-          Usar paso
-        </button>
-        <button class="quitar-paso" type="button" data-accion="quitar" data-index="${index}">
-          Quitar pictograma
-        </button>
-      </div>
+    const cambiar = document.createElement("button");
+    cambiar.className = "cambiar-paso";
+    cambiar.type = "button";
+    cambiar.dataset.accion = "cambiar";
+    cambiar.dataset.index = String(index);
+    cambiar.textContent = "Usar paso";
 
-      <div class="marco-paso">
-        ${imagenHtml}
-      </div>
+    const quitar = document.createElement("button");
+    quitar.className = "quitar-paso";
+    quitar.type = "button";
+    quitar.dataset.accion = "quitar";
+    quitar.dataset.index = String(index);
+    quitar.textContent = "Quitar pictograma";
 
-      <input
-        class="texto-paso"
-        type="text"
-        value="${escaparTexto(paso.texto)}"
-        placeholder="Texto del paso"
-        data-accion="texto"
-        data-index="${index}"
-      >
-    `;
+    acciones.append(cambiar, quitar);
+
+    const marco = document.createElement("div");
+    marco.className = "marco-paso";
+
+    if(paso.pictograma){
+      const imagen = document.createElement("img");
+      imagen.src = paso.pictograma.imagen;
+      imagen.alt = `Pictograma de ${paso.pictograma.palabra || ""}`;
+      imagen.crossOrigin = "anonymous";
+      marco.appendChild(imagen);
+    }else{
+      const placeholder = document.createElement("p");
+      placeholder.className = "placeholder-paso";
+      placeholder.textContent = "Selecciona este paso y busca un pictograma";
+      marco.appendChild(placeholder);
+    }
+
+    const input = document.createElement("input");
+    input.className = "texto-paso";
+    input.type = "text";
+    input.value = paso.texto || "";
+    input.placeholder = "Texto del paso";
+    input.dataset.accion = "texto";
+    input.dataset.index = String(index);
+
+    tarjeta.append(superior, acciones, marco, input);
 
     tarjeta.addEventListener("click", (evento) => {
       const accion = evento.target.dataset.accion;
@@ -178,15 +192,13 @@ function renderizarPasos(){
       marcarPasoActivo();
     });
 
-    const inputTexto = tarjeta.querySelector(".texto-paso");
-
-    inputTexto.addEventListener("click", (evento) => {
+    input.addEventListener("click", (evento) => {
       evento.stopPropagation();
       pasoActivo = index;
       marcarPasoActivo();
     });
 
-    inputTexto.addEventListener("input", (evento) => {
+    input.addEventListener("input", (evento) => {
       pasos[index].texto = evento.target.value;
       renderizarPreview();
     });
@@ -214,12 +226,12 @@ async function buscarPictogramas(evento){
 
   if(!termino){
     estadoBusqueda.textContent = "Escribe una palabra para buscar pictogramas.";
-    resultadosArasaac.innerHTML = "";
+    resultadosArasaac.replaceChildren();
     return;
   }
 
   estadoBusqueda.textContent = "Buscando pictogramas en ARASAAC...";
-  resultadosArasaac.innerHTML = "";
+  resultadosArasaac.replaceChildren();
 
   try{
     const respuesta = await fetch(API_BUSQUEDA + encodeURIComponent(termino));
@@ -245,35 +257,37 @@ async function buscarPictogramas(evento){
 }
 
 function renderizarResultados(pictogramas){
-  resultadosArasaac.innerHTML = "";
+  resultadosArasaac.replaceChildren();
 
   pictogramas.forEach((picto) => {
     const id = picto._id || picto.id;
+    const idTexto = String(id || "").trim();
 
-    if(!id){
+    if(!/^\d+$/.test(idTexto)){
       return;
     }
 
     const palabra = obtenerPalabra(picto);
-    const imagen = `${URL_IMAGEN}${id}/${id}_500.png`;
+    const imagen = `${URL_IMAGEN}${idTexto}/${idTexto}_500.png`;
 
     const boton = document.createElement("button");
     boton.className = "opcion-picto";
     boton.type = "button";
 
-    boton.innerHTML = `
-      <img
-        src="${imagen}"
-        alt="Pictograma de ${escaparTexto(palabra)}"
-        crossorigin="anonymous"
-        loading="lazy"
-      >
-      <span>${escaparTexto(palabra)}</span>
-    `;
+    const imagenElemento = document.createElement("img");
+    imagenElemento.src = imagen;
+    imagenElemento.alt = `Pictograma de ${palabra}`;
+    imagenElemento.crossOrigin = "anonymous";
+    imagenElemento.loading = "lazy";
+
+    const etiqueta = document.createElement("span");
+    etiqueta.textContent = palabra;
+
+    boton.append(imagenElemento, etiqueta);
 
     boton.addEventListener("click", () => {
       asignarPictograma({
-        id,
+        id: idTexto,
         palabra,
         imagen
       });
@@ -341,28 +355,36 @@ function actualizarEstadoPasoActivo(){
 
 function renderizarPreview(){
   rutinaTituloPreview.textContent = tituloRutina.value.trim() || "Mi rutina visual";
-  rutinaSecuencia.innerHTML = "";
+  rutinaSecuencia.replaceChildren();
 
   pasos.forEach((paso, index) => {
     const item = document.createElement("div");
     item.className = "rutina-item";
 
+    const numero = document.createElement("div");
+    numero.className = "rutina-numero";
+    numero.textContent = String(index + 1);
+    item.appendChild(numero);
+
     if(paso.pictograma){
-      item.innerHTML = `
-        <div class="rutina-numero">${index + 1}</div>
-        <img
-          src="${paso.pictograma.imagen}"
-          alt="Pictograma de ${escaparTexto(paso.pictograma.palabra)}"
-          crossorigin="anonymous"
-        >
-        <p>${escaparTexto(paso.texto || paso.pictograma.palabra)}</p>
-      `;
+      const imagen = document.createElement("img");
+      imagen.src = paso.pictograma.imagen;
+      imagen.alt = `Pictograma de ${paso.pictograma.palabra || ""}`;
+      imagen.crossOrigin = "anonymous";
+
+      const texto = document.createElement("p");
+      texto.textContent = paso.texto || paso.pictograma.palabra || "";
+
+      item.append(imagen, texto);
     }else{
-      item.innerHTML = `
-        <div class="rutina-numero">${index + 1}</div>
-        <div class="rutina-pendiente">Pendiente</div>
-        <p>Seleccionar pictograma</p>
-      `;
+      const pendiente = document.createElement("div");
+      pendiente.className = "rutina-pendiente";
+      pendiente.textContent = "Pendiente";
+
+      const texto = document.createElement("p");
+      texto.textContent = "Seleccionar pictograma";
+
+      item.append(pendiente, texto);
     }
 
     rutinaSecuencia.appendChild(item);
