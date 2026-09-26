@@ -142,3 +142,25 @@ html.eva-alto-contraste .resultado.incorrecto{
 
 /* Ajuste del bloque de retorno sin estilo inline. */
 .acciones-practica-retorno{justify-content:flex-start;margin-top:0;margin-bottom:18px}
+
+/* Jerarquía tipográfica Práctica Braille MEA. */
+.encabezado-practica h2,
+.panel-informativo h2{
+  font-size:clamp(1.5rem,2.3vw,1.875rem);
+  line-height:1.20;
+}
+.panel-respuesta h3,
+.panel-signo h3{
+  font-size:clamp(1.1875rem,1.6vw,1.375rem);
+  line-height:1.30;
+}
+.control-opcion h3{
+  font-size:1.05rem;
+  line-height:1.30;
+}
+@media(max-width:760px){
+  .encabezado-practica h2,
+  .panel-informativo h2{font-size:clamp(1.5rem,6vw,1.6875rem);}
+  .panel-respuesta h3,
+  .panel-signo h3{font-size:1.1875rem;}
+}
