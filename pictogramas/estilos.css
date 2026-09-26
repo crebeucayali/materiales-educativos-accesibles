@@ -64,3 +64,18 @@ body .subtitulo{max-width:880px!important;margin:0!important;color:rgba(255,255,
 
 /* Utilidad accesible para títulos solo visibles a lectores de pantalla. */
 .solo-lectores{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* Jerarquía tipográfica Pictogramas MEA. */
+body .portada h1{
+  font-size:clamp(2rem,3.5vw,3rem)!important;
+  line-height:1.10!important;
+}
+.tarjeta-picto h3,
+.estado-vacio h3,
+.mensaje-error h3{
+  font-size:1.0625rem;
+  line-height:1.30;
+}
+@media(max-width:760px){
+  body .portada h1{font-size:clamp(2rem,9vw,2.25rem)!important;}
+}
