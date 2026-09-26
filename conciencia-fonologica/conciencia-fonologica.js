@@ -82,7 +82,7 @@ function sugerirSilabasSimples(palabra){
 
 function actualizarMiniatura(url, fuente){
   const contenedor = $('miniatura');
-  contenedor.innerHTML = '';
+  contenedor.replaceChildren();
 
   if(!url){
     contenedor.textContent = 'Aún no se ha cargado una imagen.';
@@ -107,7 +107,7 @@ function actualizarMiniatura(url, fuente){
 
 function colocarImagenEnFicha(){
   const contenedor = $('imagenFicha');
-  contenedor.innerHTML = '';
+  contenedor.replaceChildren();
 
   if(!imagenActual){
     const span = document.createElement('span');
@@ -120,7 +120,9 @@ function colocarImagenEnFicha(){
   img.alt = 'Imagen de apoyo de la palabra trabajada';
   img.src = imagenActual;
   img.onerror = () => {
-    contenedor.innerHTML = '<span>No se pudo cargar la imagen</span>';
+    const aviso = document.createElement('span');
+    aviso.textContent = 'No se pudo cargar la imagen';
+    contenedor.replaceChildren(aviso);
   };
   contenedor.appendChild(img);
 }
@@ -144,7 +146,7 @@ function actualizarFicha(){
   $('palabraGrande').textContent = palabra.toUpperCase();
 
   const chips = $('silabasGrandes');
-  chips.innerHTML = '';
+  chips.replaceChildren();
   silabasPalabra.forEach((silaba) => {
     const span = document.createElement('span');
     span.className = 'chip-silaba';
@@ -155,32 +157,53 @@ function actualizarFicha(){
   colocarImagenEnFicha();
 
   const silabario = $('silabario');
-  silabario.innerHTML = '';
+  silabario.replaceChildren();
   familia.forEach((silaba) => silabario.appendChild(crearCasillaSilaba(silaba)));
 
   const palabras = bancoPalabras[letra] || [];
   const tabla = $('tablaInicial');
-  tabla.innerHTML = '';
+  tabla.replaceChildren();
   const seleccionadas = [palabra, ...palabras.filter((item) => normalizarTexto(item) !== normalizarTexto(palabra))].slice(0, 4);
 
   seleccionadas.forEach((item) => {
     const sugerida = sugerirSilabasSimples(item).split('-')[0] || '';
     const tr = document.createElement('tr');
-    tr.innerHTML = '<td>' + capitalizar(item) + '</td><td>' + sugerida + '</td><td><span class="linea-respuesta"></span></td>';
+    const palabraCelda = document.createElement('td');
+    palabraCelda.textContent = capitalizar(item);
+    const silabaCelda = document.createElement('td');
+    silabaCelda.textContent = sugerida;
+    const respuestaCelda = document.createElement('td');
+    const respuestaLinea = document.createElement('span');
+    respuestaLinea.className = 'linea-respuesta';
+    respuestaCelda.appendChild(respuestaLinea);
+    tr.append(palabraCelda, silabaCelda, respuestaCelda);
     tabla.appendChild(tr);
   });
 
   const completar = $('completarPalabra');
-  completar.innerHTML = '';
+  completar.replaceChildren();
   const primeraSilaba = silabasPalabra[0] || '';
   const resto = palabra.slice(primeraSilaba.length);
   const linea = document.createElement('div');
   linea.className = 'actividad-linea';
-  linea.innerHTML = '<span>Completa: <strong>____' + resto + '</strong></span><span>Respuesta: <span class="linea-respuesta"></span></span>';
+
+  const completarTexto = document.createElement('span');
+  completarTexto.appendChild(document.createTextNode('Completa: '));
+  const palabraIncompleta = document.createElement('strong');
+  palabraIncompleta.textContent = '____' + resto;
+  completarTexto.appendChild(palabraIncompleta);
+
+  const respuestaTexto = document.createElement('span');
+  respuestaTexto.appendChild(document.createTextNode('Respuesta: '));
+  const respuestaLinea = document.createElement('span');
+  respuestaLinea.className = 'linea-respuesta';
+  respuestaTexto.appendChild(respuestaLinea);
+
+  linea.append(completarTexto, respuestaTexto);
   completar.appendChild(linea);
 
   const ordenar = $('ordenarSilabas');
-  ordenar.innerHTML = '';
+  ordenar.replaceChildren();
   [...silabasPalabra].reverse().forEach((silaba) => {
     const div = document.createElement('div');
     div.className = 'caja-recorte';
