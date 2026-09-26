@@ -61,3 +61,16 @@ Estos documentos ayudan a explicar el alcance del proyecto, las condiciones de u
 ## Organización progresiva
 
 La estructura puede modificarse según el crecimiento real del proyecto. Si se agregan nuevos tipos de materiales, se recomienda crear carpetas específicas y registrar los cambios en la bitácora.
+
+
+## Práctica Braille
+
+La estructura de práctica Braille se mantiene separada por función y no representa carpetas redundantes:
+
+- `practica-braille-opciones/`: selector de modalidad;
+- `practica-braille/`: práctica básica;
+- `practica-braille-v2/`: práctica progresiva organizada por niveles.
+
+La ruta `practica-braille-v2/` se conserva por compatibilidad con enlaces ya publicados. Aunque su nombre técnico contiene `v2`, funcionalmente corresponde a la modalidad “Práctica por niveles”.
+
+No debe fusionarse ni renombrarse esta estructura sin una migración específica de URLs y redirecciones.
