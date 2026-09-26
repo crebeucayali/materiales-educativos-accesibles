@@ -136,3 +136,30 @@ body .subtitulo{max-width:880px;margin:0;color:rgba(255,255,255,.96);font-size:1
   .tarjeta-opcion:hover,.tarjeta-opcion:focus-within,.boton-opcion:hover,.boton-opcion:focus-visible{transform:none}
   .contenido-acordeon{animation:none}
 }
+
+/* Jerarquía tipográfica Opciones Braille MEA. */
+body .portada h1{
+  font-size:clamp(2rem,3.5vw,3rem);
+  line-height:1.10;
+}
+.encabezado-opciones h2,
+.encabezado-teoria h2{
+  font-size:clamp(1.5rem,2.3vw,1.875rem);
+  line-height:1.20;
+}
+.tarjeta-opcion h3{
+  font-size:clamp(1.1875rem,1.6vw,1.375rem);
+  line-height:1.30;
+}
+.contenido-acordeon h3,
+.serie-teoria h3,
+.paso-regleta h3{
+  font-size:1.0625rem;
+  line-height:1.32;
+}
+@media(max-width:760px){
+  body .portada h1{font-size:clamp(2rem,9vw,2.25rem);}
+  .encabezado-opciones h2,
+  .encabezado-teoria h2{font-size:clamp(1.5rem,6vw,1.6875rem);}
+  .tarjeta-opcion h3{font-size:1.1875rem;}
+}
