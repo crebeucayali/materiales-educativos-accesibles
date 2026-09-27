@@ -84,7 +84,7 @@
     return Math.random().toString(36).slice(2, 12).toUpperCase();
   }
 
-  function obtenerUsuarioAnonimo() {
+  function obtenerUsuarioSeudonimo() {
     const clave = 'evaBrailleUsuario';
     let usuario = '';
     try { usuario = localStorage.getItem(clave) || ''; }
@@ -158,7 +158,7 @@
 
   botonGenerar.addEventListener('click', () => {
     const usaNombre = identidadSeleccionada() === 'nombre';
-    const usuario = obtenerUsuarioAnonimo();
+    const usuario = obtenerUsuarioSeudonimo();
     const participante = usaNombre ? limpiarTexto(nombre?.value, 80) : `Usuario ${usuario}`;
 
     if (usaNombre && !participante) {
@@ -190,7 +190,7 @@
         registrar({
           consentimientoRegistro: true,
           usuario: protegerParaHoja(usuario, 50),
-          tipoUsuario: usaNombre ? 'nominal' : 'anonimo',
+          tipoUsuario: usaNombre ? 'nominal' : 'seudonimo',
           consentimientoNombre: usaNombre,
           nombre: usaNombre ? protegerParaHoja(participante, 80) : '',
           modalidad: 'Práctica Braille por niveles',
