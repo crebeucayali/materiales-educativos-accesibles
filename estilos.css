@@ -105,16 +105,16 @@ textarea,input[type="text"],input:not([type]){position:relative;z-index:50;point
 
 footer{background:#082f49;color:var(--blanco);padding:42px 18px 26px;}
 .footer-contenido{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1.25fr;gap:32px;}
-.footer-bloque h2{margin:0 0 12px;font-size:1rem;color:var(--blanco);}
-.footer-bloque p{margin:0;color:#d9eaf7;line-height:1.65;font-size:.94rem;}
-.footer-bloque a{color:#d9eaf7;text-decoration:underline;text-underline-offset:3px;}
+.footer-bloque h2{margin:0 0 12px;font-size:.9375rem;color:var(--blanco);}
+.footer-bloque p{margin:0;color:#d9eaf7;line-height:1.65;font-size:.875rem;}
+.footer-bloque a{color:#d9eaf7;font-size:.875rem;text-decoration:underline;text-underline-offset:3px;}
 .footer-bloque a:hover{text-decoration:underline;}
 .footer-bloque a[href*="accesos-complementarios/contacto.html"]{font-size:0;}
-.footer-bloque a[href*="accesos-complementarios/contacto.html"]::after{content:"Contacto Institucional";font-size:.94rem;}
+.footer-bloque a[href*="accesos-complementarios/contacto.html"]::after{content:"Contacto Institucional";font-size:.875rem;}
 .footer-marca{display:flex;align-items:flex-start;gap:16px;}
 .footer-logo{width:72px;max-width:72px;height:auto;object-fit:contain;display:block;flex-shrink:0;}
 .footer-final{max-width:1120px;margin:28px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);}
-.footer-final p{margin:0;color:#bcccdc;text-align:left;line-height:1.6;font-size:.9rem;}
+.footer-final p{margin:0;color:#bcccdc;text-align:left;line-height:1.6;font-size:.8125rem;}
 
 @media (max-width:900px){
   .herramientas,.panel-presentacion,.footer-contenido{grid-template-columns:1fr;}
@@ -174,3 +174,7 @@ footer{background:#082f49;color:var(--blanco);padding:42px 18px 26px;}
     padding-bottom:6px;
   }
 }
+
+
+/* Escala tipográfica del footer institucional MEA */
+.footer-legal-eva a{font-size:.8125rem;}
