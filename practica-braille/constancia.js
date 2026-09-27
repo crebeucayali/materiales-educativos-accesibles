@@ -89,7 +89,7 @@
     return `MEA-BRAILLE-${sello}-${fragmentoAleatorio().slice(0, 8)}`;
   }
 
-  function obtenerUsuarioAnonimo() {
+  function obtenerUsuarioSeudonimo() {
     const clave = 'evaBrailleUsuario';
     let usuario = '';
     try { usuario = localStorage.getItem(clave) || ''; }
@@ -162,7 +162,7 @@
 
   botonGenerar.addEventListener('click', () => {
     const usaNombre = identidadSeleccionada() === 'nombre';
-    const usuario = obtenerUsuarioAnonimo();
+    const usuario = obtenerUsuarioSeudonimo();
     const nombreIngresado = limpiarTexto(nombre?.value, 80);
     const participante = usaNombre ? nombreIngresado : `Usuario ${usuario}`;
 
@@ -189,7 +189,7 @@
       registrar({
         consentimientoRegistro: true,
         usuario: protegerParaHoja(usuario, 50),
-        tipoUsuario: usaNombre ? 'nominal' : 'anonimo',
+        tipoUsuario: usaNombre ? 'nominal' : 'seudonimo',
         consentimientoNombre: usaNombre,
         nombre: usaNombre ? protegerParaHoja(participante, 80) : '',
         modalidad: 'Práctica Braille básica',
