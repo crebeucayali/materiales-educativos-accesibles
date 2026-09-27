@@ -27,7 +27,7 @@
 
   <main id="contenido-principal" class="contenido-privacidad">
     <article class="panel-privacidad">
-      <p class="resumen-privacidad"><strong>Resumen:</strong> el seguimiento es opcional. La constancia simbólica puede generarse sin autorizar el registro estadístico. De manera predeterminada se utiliza un identificador anónimo y el nombre solo se registra cuando la persona decide usarlo voluntariamente.</p>
+      <p class="resumen-privacidad"><strong>Resumen:</strong> el seguimiento es opcional. La constancia simbólica puede generarse sin autorizar el registro estadístico. De manera predeterminada se utiliza un identificador seudónimo generado y conservado en el navegador; el nombre solo se registra cuando la persona decide usarlo voluntariamente.</p>
 
       <h2>Responsable del tratamiento</h2>
       <p>El seguimiento de uso es administrado por el responsable del Ecosistema Virtual Accesible, en el marco del módulo Materiales Educativos Accesibles del CREBE "Señor de los Milagros" - Ucayali.</p>
@@ -37,7 +37,7 @@
 
       <h2>Datos que pueden registrarse</h2>
       <ul>
-        <li>Identificador anónimo generado por el navegador.</li>
+        <li>Identificador seudónimo aleatorio generado por el navegador. Este identificador permite reconocer registros posteriores realizados desde el mismo navegador mientras permanezca almacenado localmente, pero no contiene por sí mismo el nombre de la persona.</li>
         <li>Fecha y hora del registro.</li>
         <li>Modalidad y nivel de práctica.</li>
         <li>Cantidad de ejercicios, porcentaje, errores y pistas utilizadas, cuando corresponda.</li>
@@ -49,18 +49,18 @@
       <h2>Datos que no se solicitan</h2>
       <p class="dato-no-recopilado">No se solicitan correo electrónico, documento de identidad, número telefónico, domicilio, contraseña, información financiera ni datos de contacto.</p>
 
-      <h2>Consentimiento y participación anónima</h2>
+      <h2>Consentimiento y participación seudónima</h2>
       <p>La casilla de autorización para el seguimiento estadístico no está marcada de forma predeterminada. Si no se otorga el consentimiento, la constancia simbólica puede generarse normalmente y no se envían datos a la hoja de seguimiento.</p>
-      <p>Cuando se autoriza el registro, la persona puede continuar de forma anónima. El identificador se conserva localmente en el navegador para estimar el uso recurrente desde ese mismo dispositivo. Puede cambiar si se eliminan los datos del navegador o se utiliza otro equipo.</p>
+      <p>Cuando se autoriza el registro sin utilizar un nombre, la persona participa de forma seudónima. El identificador aleatorio <code>evaBrailleUsuario</code> se conserva en <code>localStorage</code> para estimar el uso recurrente desde ese mismo navegador. No debe considerarse anónimo porque permite vincular varios registros con el mismo navegador mientras el identificador permanezca almacenado. Puede cambiar si se eliminan los datos locales o se utiliza otro navegador o equipo.</p>
 
       <h2>Almacenamiento y acceso</h2>
-      <p>Los registros autorizados se envían mediante Google Apps Script y se almacenan en una hoja de cálculo de Google Drive. El acceso debe mantenerse restringido al responsable del proyecto y a las personas institucionalmente autorizadas para el seguimiento educativo.</p>
+      <p>Los registros autorizados se transmiten mediante Google Apps Script y se almacenan en Google Sheets dentro de la infraestructura de Google Drive asociada a la cuenta administradora. Por ello, Google actúa como proveedor tecnológico externo para la recepción y el almacenamiento de estos registros. El acceso debe mantenerse restringido al responsable del proyecto y a las personas institucionalmente autorizadas para el seguimiento educativo.</p>
 
       <h2>Conservación y eliminación</h2>
       <p>Los registros se conservarán únicamente durante el tiempo necesario para analizar el uso y mejorar el recurso. La persona que haya utilizado voluntariamente su nombre puede solicitar la revisión o eliminación del registro mediante el canal de contacto institucional, indicando la fecha aproximada y el código de constancia cuando lo tenga disponible.</p>
 
       <h2>Participación de menores de edad</h2>
-      <p>La práctica está diseñada como recurso educativo. Cuando se utilice con estudiantes menores de edad dentro de una actividad institucional, el acompañamiento y la autorización aplicable deben ser gestionados por el docente, la familia o el responsable correspondiente. Se recomienda mantener la modalidad anónima cuando no sea necesario identificar al participante.</p>
+      <p>La práctica está diseñada como recurso educativo. Cuando se utilice con estudiantes menores de edad dentro de una actividad institucional, el acompañamiento y la autorización aplicable deben ser gestionados por el docente, la familia o el responsable correspondiente. Se recomienda mantener la modalidad seudónima cuando no sea necesario utilizar el nombre del participante.</p>
 
       <h2>Constancia simbólica</h2>
       <p>La constancia tiene carácter educativo y motivacional. No constituye certificado oficial, acreditación académica ni constancia institucional de capacitación.</p>
