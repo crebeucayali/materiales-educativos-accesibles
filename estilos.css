@@ -32,7 +32,7 @@ a{color:inherit;}
 .marca{display:inline-flex;align-items:center;gap:14px;color:var(--blanco);text-decoration:none;font-weight:900;font-size:1.05rem;letter-spacing:0;}
 .marca-icono{width:54px;height:54px;border-radius:18px;display:inline-flex;align-items:center;justify-content:center;background:var(--blanco);color:#0b3550;font-weight:900;font-size:.9rem;box-shadow:0 10px 24px rgba(0,0,0,.14);}
 .enlaces-cabecera{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:12px;}
-.enlace-cabecera{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 22px;border:1px solid rgba(255,255,255,.45);border-radius:999px;color:var(--blanco);text-decoration:none;font-size:1rem;font-weight:800;background:rgba(255,255,255,.08);}
+.enlace-cabecera{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 22px;border:1px solid rgba(255,255,255,.45);border-radius:999px;color:var(--blanco);text-decoration:none;font-size:0.9375rem;font-weight:600;background:rgba(255,255,255,.08);}
 .enlace-cabecera:hover{color:var(--blanco);background:rgba(255,255,255,.16);}
 .cabecera .enlace-cabecera[href="https://crebeucayali.github.io/"]:not(:first-child){display:none;}
 .cabecera .enlace-cabecera[href*="accesos-complementarios/contacto.html"]{font-size:0;}
@@ -128,7 +128,7 @@ footer{background:#082f49;color:var(--blanco);padding:42px 18px 26px;}
   .cabecera{padding:26px 18px 116px;}
   .navegacion{align-items:flex-start;flex-direction:column;}
   .enlaces-cabecera{display:flex;width:100%;justify-content:flex-start;align-items:center;gap:8px;flex-wrap:wrap;}
-  .enlace-cabecera{width:auto;min-width:0;min-height:38px;padding:8px 12px;font-size:.84rem;line-height:1.1;text-align:center;white-space:nowrap;border-radius:999px;}
+  .enlace-cabecera{width:auto;min-width:0;min-height:38px;padding:8px 12px;font-size:0.875rem;line-height:1.1;text-align:center;white-space:nowrap;border-radius:999px;}
   .cabecera .enlace-cabecera[href*="accesos-complementarios/contacto.html"]::after{font-size:.84rem;}
   .portada{margin-top:54px;}
   .bloque-institucional{align-items:center;gap:16px;margin-bottom:28px;}
