@@ -9,7 +9,7 @@ body .marca-modulo{display:block;margin:0 0 3px;color:#c9f7ee;font-size:.76rem;f
 body .marca-nombre-institucional{display:block;color:#fff;font-size:1.02rem;font-weight:900}
 body .marca-detalle-institucional{display:block;margin-top:4px;color:rgba(255,255,255,.94);font-size:.88rem;font-weight:750}
 body .enlaces-cabecera{display:flex;flex-wrap:wrap;gap:12px}
-body .enlace-cabecera{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 22px;border:1px solid rgba(255,255,255,.45);border-radius:999px;color:#fff;text-decoration:none;font-weight:800;background:rgba(255,255,255,.08)}
+body .enlace-cabecera{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 22px;border:1px solid rgba(255,255,255,.45);border-radius:999px;color:#fff;text-decoration:none;font-weight:600;background:rgba(255,255,255,.08)}
 body .portada{max-width:1120px;margin:70px auto 0}
 body .etiqueta{margin:0 0 14px;color:#c9f7ee;font-size:.86rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
 body .portada h1{max-width:900px;margin:0 0 22px;color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.5rem,5.8vw,4.15rem);line-height:1.04;letter-spacing:-.04em}
