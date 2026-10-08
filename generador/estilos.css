@@ -361,3 +361,10 @@ body .portada h1{
   .panel-descarga h2{font-size:clamp(1.5rem,6vw,1.6875rem);}
   .vista-previa h3{font-size:1.1875rem;}
 }
+
+/* Fase 8 Etapa 7: reflujo del generador Braille en pantallas estrechas. */
+@media (max-width:760px){
+  .contenedor-generador{grid-template-columns:minmax(0,1fr);}
+  .contenedor-generador > *{min-width:0;}
+  .panel-braille{padding:24px 18px;}
+}
