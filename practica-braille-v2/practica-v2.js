@@ -135,7 +135,7 @@ return celda;
 }
 function crearSigno(item,pequeno=false){
 const contenedor=document.createElement('div');
-contenedor.className=`secuencia-braille${pequeno?' secuencia-pequena':''}`;
+contenedor.className=`secuencia-braille${item.celdas.length>1?' secuencia-compuesta':''}${pequeno?' secuencia-pequena':''}`;
 item.celdas.forEach(celda=>contenedor.appendChild(crearCelda(celda,pequeno)));
 return contenedor;
 }
