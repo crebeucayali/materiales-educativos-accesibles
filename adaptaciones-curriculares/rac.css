@@ -25,3 +25,9 @@
 .rac-header img.marca-logo-superior{display:block!important;width:48px!important;height:48px!important;min-width:0!important;max-width:48px!important;min-height:0!important;max-height:48px!important;object-fit:contain!important;flex:0 0 48px!important}
 .rac-footer img.footer-logo{display:block!important;width:52px!important;height:52px!important;min-width:0!important;max-width:52px!important;min-height:0!important;max-height:52px!important;object-fit:contain!important;flex:0 0 52px!important}
 @media(max-width:600px){.rac-header img.marca-logo-superior{width:44px!important;height:44px!important;max-width:44px!important;max-height:44px!important;flex-basis:44px!important}.rac-footer img.footer-logo{width:48px!important;height:48px!important;max-width:48px!important;max-height:48px!important;flex-basis:48px!important}}
+
+/* Patrón shipibo oficial de MEA, en una capa decorativa sin afectar el contenido */
+.rac-header{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 84% 70%,rgba(255,255,255,.11) 0 22%,transparent 23%),radial-gradient(circle at 86% 74%,rgba(255,255,255,.08) 0 36%,transparent 37%),linear-gradient(135deg,#0b3550 0%,#0f4f57 48%,#0f766e 100%)}
+.rac-header::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url("../patron-shipibo.webp?v=3");background-repeat:repeat;background-size:cover;background-position:center;opacity:.30;filter:saturate(1.15) contrast(1.08)}
+.rac-header>.nav,.rac-header>.heading{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.rac-header::before{transition:none;animation:none}}
