@@ -20,3 +20,8 @@
 .rac-footer a:hover{text-decoration:underline}
 @media(max-width:760px){.rac-footer .footer-contenido{grid-template-columns:1fr 1fr}.rac-footer .footer-marca{grid-column:1/-1}}
 @media(max-width:600px){.rac-header .marca-logo-superior{width:54px;max-width:54px;height:auto;max-height:66px}.rac-header .marca-modulo{font-size:.9rem}.rac-header .marca-nombre-institucional{font-size:.77rem}.rac-header .marca-detalle-institucional{font-size:.7rem}.rac-header .links{gap:7px}.rac-header .links a{padding:7px 10px;font-size:.87rem}.rac-footer .footer-contenido{grid-template-columns:1fr}.rac-footer .footer-marca{grid-column:auto}}
+
+/* Límites explícitos del logotipo: no depende de las dimensiones originales del PNG */
+.rac-header img.marca-logo-superior{display:block!important;width:48px!important;height:48px!important;min-width:0!important;max-width:48px!important;min-height:0!important;max-height:48px!important;object-fit:contain!important;flex:0 0 48px!important}
+.rac-footer img.footer-logo{display:block!important;width:52px!important;height:52px!important;min-width:0!important;max-width:52px!important;min-height:0!important;max-height:52px!important;object-fit:contain!important;flex:0 0 52px!important}
+@media(max-width:600px){.rac-header img.marca-logo-superior{width:44px!important;height:44px!important;max-width:44px!important;max-height:44px!important;flex-basis:44px!important}.rac-footer img.footer-logo{width:48px!important;height:48px!important;max-width:48px!important;max-height:48px!important;flex-basis:48px!important}}
