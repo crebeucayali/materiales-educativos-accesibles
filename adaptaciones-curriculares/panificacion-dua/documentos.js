@@ -1,0 +1,1 @@
+"use strict";const files=[["PDF","documentos/sesion-panificacion-dua.pdf"],["Word","documentos/sesion-panificacion-dua.docx"]];const list=document.getElementById("archivos");if(list){for(const [type,path] of files){const li=document.createElement("li");li.textContent=type+": pendiente de revisión y publicación";list.append(li)}}
