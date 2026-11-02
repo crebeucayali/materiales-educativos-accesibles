@@ -2,7 +2,7 @@
 /* Identidad institucional compartida con MEA, adaptada a RAC */
 .rac-header .nav{padding-top:8px}
 .rac-header .marca-institucional{display:flex;align-items:center;gap:13px;min-width:0;max-width:520px}
-.rac-header .marca-logo-superior{width:64px;height:64px;object-fit:contain;flex:none;background:#fff;border-radius:12px;padding:5px}
+.rac-header .marca-logo-superior{display:block;width:64px;max-width:64px;height:auto;max-height:76px;object-fit:contain;flex:none}
 .rac-header .marca-texto-superior{display:flex;flex-direction:column;line-height:1.35;min-width:0}
 .rac-header .marca-modulo{font-weight:800;font-size:1rem}
 .rac-header .marca-nombre-institucional{font-weight:650;font-size:.84rem}
@@ -12,11 +12,11 @@
 .rac-footer{padding:32px 0 22px}
 .rac-footer .footer-contenido{display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:26px}
 .rac-footer .footer-marca{display:flex;align-items:flex-start;gap:15px}
-.rac-footer .footer-logo{width:68px;height:68px;object-fit:contain;background:#fff;border-radius:10px;padding:5px;flex:none}
+.rac-footer .footer-logo{display:block;width:68px;max-width:68px;height:auto;max-height:82px;object-fit:contain;flex:none}
 .rac-footer h2{color:#fff;font-size:1.05rem;margin:0 0 10px}
 .rac-footer p{margin:0 0 9px}
 .rac-footer .footer-legal-eva{display:flex;flex-wrap:wrap;gap:10px 22px;border-top:1px solid #ffffff35;padding-top:20px;margin-top:25px}
 .rac-footer .footer-final{border-top:1px solid #ffffff35;padding-top:15px;margin-top:18px}
 .rac-footer a:hover{text-decoration:underline}
 @media(max-width:760px){.rac-footer .footer-contenido{grid-template-columns:1fr 1fr}.rac-footer .footer-marca{grid-column:1/-1}}
-@media(max-width:600px){.rac-header .marca-logo-superior{width:54px;height:54px}.rac-header .marca-modulo{font-size:.9rem}.rac-header .marca-nombre-institucional{font-size:.77rem}.rac-header .marca-detalle-institucional{font-size:.7rem}.rac-header .links{gap:7px}.rac-header .links a{padding:7px 10px;font-size:.87rem}.rac-footer .footer-contenido{grid-template-columns:1fr}.rac-footer .footer-marca{grid-column:auto}}
+@media(max-width:600px){.rac-header .marca-logo-superior{width:54px;max-width:54px;height:auto;max-height:66px}.rac-header .marca-modulo{font-size:.9rem}.rac-header .marca-nombre-institucional{font-size:.77rem}.rac-header .marca-detalle-institucional{font-size:.7rem}.rac-header .links{gap:7px}.rac-header .links a{padding:7px 10px;font-size:.87rem}.rac-footer .footer-contenido{grid-template-columns:1fr}.rac-footer .footer-marca{grid-column:auto}}
