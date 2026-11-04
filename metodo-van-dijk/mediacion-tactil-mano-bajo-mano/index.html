@@ -3,10 +3,252 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'none'; style-src 'self'; frame-src 'none'">
-<title>La Mediación Táctil: Técnica &quot;Mano bajo Mano&quot; | Método de Jan van Dijk - MEA</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' https://crebeucayali.github.io data:; frame-src 'none'; form-action 'self'">
+<title>La Mediación Táctil y la técnica "Mano bajo Mano" | Método de Jan van Dijk - MEA</title>
 <link rel="canonical" href="https://crebeucayali.github.io/materiales-educativos-accesibles/metodo-van-dijk/mediacion-tactil-mano-bajo-mano/">
+<link rel="stylesheet" href="../estilos.css?v=1">
+<style>
+  .contenido-pagina{
+    width:min(1000px,calc(100% - 32px));
+    margin:0 auto;
+    padding:32px 0 56px;
+  }
+  .miga{
+    margin:0 0 18px;
+    font-size:.95rem;
+  }
+  .miga a{
+    color:#0b3550;
+    text-decoration:none;
+    font-weight:700;
+  }
+  .cabecera-seccion{
+    background:#ffffff;
+    border:1px solid #d9e2ec;
+    border-radius:24px;
+    padding:28px 24px;
+    box-shadow:0 12px 30px rgba(16,42,67,.08);
+    margin-bottom:24px;
+  }
+  .cabecera-seccion h1{
+    margin:0 0 12px;
+    color:#0b3550;
+    line-height:1.2;
+  }
+  .cabecera-seccion p{
+    margin:0;
+    color:#334e68;
+  }
+  .bloque-contenido{
+    background:#ffffff;
+    border:1px solid #d9e2ec;
+    border-radius:24px;
+    padding:28px 24px;
+    box-shadow:0 12px 30px rgba(16,42,67,.08);
+  }
+  .bloque-contenido h2,
+  .bloque-contenido h3,
+  .bloque-contenido h4{
+    color:#0b3550;
+    line-height:1.3;
+  }
+  .bloque-contenido h2{
+    margin-top:0;
+    margin-bottom:16px;
+  }
+  .bloque-contenido h3{
+    margin-top:28px;
+    margin-bottom:12px;
+  }
+  .bloque-contenido h4{
+    margin-top:20px;
+    margin-bottom:10px;
+  }
+  .bloque-contenido p,
+  .bloque-contenido li{
+    color:#243b53;
+    line-height:1.8;
+  }
+  .bloque-contenido ul,
+  .bloque-contenido ol{
+    padding-left:22px;
+  }
+  .frase-destacada{
+    margin:0 0 24px;
+    padding:18px 20px;
+    background:#f0fdfa;
+    border-left:6px solid #0f766e;
+    border-radius:16px;
+    color:#102a43;
+  }
+  .frase-destacada p{
+    margin:0;
+  }
+  .placeholder-imagen{
+    margin:20px 0;
+    padding:18px 20px;
+    border:2px dashed #94a3b8;
+    border-radius:18px;
+    background:#f8fafc;
+    color:#486581;
+  }
+  .placeholder-imagen strong{
+    display:block;
+    margin-bottom:8px;
+    color:#0b3550;
+  }
+  .tabla-responsive{
+    overflow-x:auto;
+    margin:18px 0;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:760px;
+  }
+  th, td{
+    border:1px solid #d9e2ec;
+    padding:14px 12px;
+    text-align:left;
+    vertical-align:top;
+    line-height:1.6;
+  }
+  th{
+    background:#f0fdfa;
+    color:#0b3550;
+  }
+  .resumen-equipo{
+    margin-top:28px;
+    padding:20px;
+    background:#fff7e6;
+    border:1px solid #f2d28b;
+    border-radius:18px;
+  }
+  .resumen-equipo h3{
+    margin-top:0;
+    color:#8a5a00;
+  }
+  .resumen-equipo ul{
+    margin:0;
+  }
+  .separador{
+    border:none;
+    border-top:1px solid #d9e2ec;
+    margin:28px 0;
+  }
+  @media (max-width:640px){
+    .cabecera-seccion,
+    .bloque-contenido{
+      padding:22px 18px;
+      border-radius:18px;
+    }
+  }
+
+  .referencias-desplegables{margin-top:24px;background:#fff;border:1px solid #d9e2ec;border-radius:20px;box-shadow:0 12px 30px rgba(16,42,67,.08);overflow:hidden}
+  .referencias-desplegables summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;color:#0b3550;font-weight:800;font-size:1.12rem}
+  .referencias-desplegables summary::-webkit-details-marker{display:none}
+  .referencias-desplegables summary::after{content:"+";font-size:1.5rem;line-height:1;color:#0f766e}
+  .referencias-desplegables[open] summary::after{content:"−"}
+  .referencias-desplegables summary:focus-visible{outline:3px solid #0f766e;outline-offset:-5px}
+  .referencias-contenido{padding:0 24px 24px;border-top:1px solid #d9e2ec}
+  .referencias-contenido h3{color:#0b3550;margin:24px 0 12px;font-size:1.12rem}
+  .referencias-contenido li{line-height:1.7;margin-bottom:12px;overflow-wrap:anywhere}
+  .referencias-contenido li ul{margin-top:7px}
+  @media(max-width:640px){.referencias-desplegables summary{padding:16px 18px;font-size:1rem}.referencias-contenido{padding:0 18px 18px}}
+</style>
 </head>
 <body>
+<a class="skip" href="#contenido">Ir al contenido</a>
+<header class="cabecera">
+  <div class="contenedor">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="identidad" href="../">
+        <img src="https://crebeucayali.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo institucional CREBE">
+        <span>Materiales Educativos Accesibles
+          <span class="subtitulo-institucional">CREBE "Señor de los Milagros" - Ucayali</span>
+        </span>
+      </a>
+      <a class="volver" href="../">Volver al Método</a>
+    </nav>
+    <h1>Método de Jan van Dijk</h1>
+    <p class="introduccion">Página 3: La Mediación Táctil y la técnica "Mano bajo Mano"</p>
+  </div>
+</header>
+<main id="contenido" class="contenido-pagina">
+  <p class="miga"><a href="../../">MEA</a> / <a href="../">Método de Jan van Dijk</a> / <span>Mediación táctil</span></p>
+  <section class="cabecera-seccion" aria-labelledby="titulo-seccion">
+    <h1 id="titulo-seccion">Sección A - Página 3: La Mediación Táctil y la técnica "Mano bajo Mano"</h1>
+  </section>
+  <article class="bloque-contenido">
+    <blockquote class="frase-destacada">
+      <p><strong>“Las manos son los ojos de quien no ve, y la voz de quien no oye. Tratemos esas manos con el mismo respeto con el que trataríamos nuestro propio rostro.”</strong></p>
+    </blockquote>
+
+    <p>El tacto es el sentido más primitivo y fundamental del ser humano. En estudiantes con multidiscapacidad o alteraciones sensoriales, la piel no es solo una envoltura: es su radar principal para procesar el entorno y establecer relaciones.</p>
+    <p>En la pedagogía tradicional, los docentes solemos guiar a los estudiantes físicamente sujetándolos de las manos. Sin embargo, en el enfoque de Van Dijk, entendemos que <strong>imponer el contacto táctil genera resistencia, no aprendizaje.</strong></p>
+    <p>Para solucionar esto, empleamos la mediación táctil respetuosa mediante la técnica <strong>"Mano bajo Mano" (<em>Hand-under-Hand</em>)</strong>.</p>
+    <hr class="separador">
+
+    <h3>1. ¿Por qué abandonar la técnica "Mano sobre Mano" (<em>Hand-over-Hand</em>)?</h3>
+    <p>La práctica más común en las aulas regulares e inclusivas es el <em>Mano sobre Mano</em> (el docente coloca su mano <strong>encima</strong> de la del estudiante y la dirige hacia una tarea, como pintar o sostener una cuchara).</p>
+    <p>Desde el punto de vista neuropsicológico, esta práctica es problemática para un estudiante con desafío sensorial por tres razones:</p>
+    <ol>
+      <li><strong>Elimina la agencia del estudiante:</strong> El niño se convierte en una herramienta pasiva del adulto ("Mi mano es movida, pero yo no decido moverla").</li>
+      <li><strong>Genera Defensividad Táctil:</strong> Si el docente guía la mano hacia algo frío, pegajoso o desconocido sin previo aviso, el cerebro del estudiante lo registra como una agresión. El niño aprende a esconder las manos o ponerse rígido para defenderse.</li>
+      <li><strong>Bloquea la exploración activa:</strong> Las yemas de los dedos (la zona con mayor densidad de receptores táctiles) quedan atrapadas bajo la mano del adulto, limitando la entrada de información sensorial.</li>
+    </ol>
+
+    <h3>2. La Solución: La Técnica "Mano bajo Mano" (<em>Hand-under-Hand</em>)</h3>
+    <p>Desarrollada bajo los principios de respeto espacial de Van Dijk, la técnica invierte la relación de poder. El docente coloca sus manos <strong>debajo</strong> de las del estudiante. Las manos del alumno descansan libremente sobre las palmas y el dorso del maestro.</p>
+    <h4>Cuadro Comparativo de Intervención</h4>
+    <div class="tabla-responsive">
+      <table aria-label="Comparación entre las técnicas Mano sobre Mano y Mano bajo Mano">
+        <thead><tr><th scope="col">Aspecto</th><th scope="col">Mano sobre Mano</th><th scope="col">Mano bajo Mano</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Poder y Control</strong></td><td>Directivo (El adulto impone la acción).</td><td>Autónomo (El estudiante elige acompañar la acción).</td></tr>
+          <tr><td><strong>Percepción Sensorial</strong></td><td>El alumno siente la presión opresiva de la mano del adulto.</td><td>El alumno percibe libremente las texturas al tocar el objeto directamente o a través de la mano del docente.</td></tr>
+          <tr><td><strong>Opción de Retirada</strong></td><td>El estudiante no puede sacar la mano; genera angustia.</td><td><strong>Crucial:</strong> El estudiante puede retirar la mano en cualquier momento si siente inseguridad o sobreestimulación.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="placeholder-imagen" aria-label="Espacio reservado para ilustración comparativa de manos">
+      <strong>Espacio para imagen</strong>
+      Gráfico ilustrativo dividido en dos. A la izquierda (rojo), una mano adulta agarrando una mano infantil desde arriba. A la derecha (verde), una mano adulta con la palma hacia arriba y una mano infantil descansando relajadamente sobre ella, ambas tocando una textura.
+    </div>
+
+    <h3>3. Protocolo de Aplicación Paso a Paso en el Aula</h3>
+    <p>Para implementar correctamente la técnica, el equipo docente debe interiorizar esta secuencia:</p>
+    <ol>
+      <li><strong>Aproximación y Señal de Presencia:</strong>
+        <ul><li>Nunca toques las manos del estudiante sorpresivamente.</li><li>Acércate de lado, respira a su ritmo, y haz un toque suave (una señal o un roce en el antebrazo o el hombro) para indicarle: <em>"Estoy aquí, vamos a hacer algo juntos"</em>.</li></ul>
+      </li>
+      <li><strong>Posición de Reposo:</strong>
+        <ul><li>Desliza tus manos suavemente bajo los antebrazos del estudiante, avanzando hasta que tus palmas queden bajo las suyas.</li><li>Deja que sus manos descansen de manera natural. Si las retira, respeta el límite, pausa y vuelve a ofrecer tus manos minutos después.</li></ul>
+      </li>
+      <li><strong>Exploración "A Bordo" (Guía Indirecta):</strong>
+        <ul><li>Mueve <em>tus</em> manos hacia el objeto de trabajo (una tijera, una textura en Inicial, una herramienta en CETPRO).</li><li>Como las manos del estudiante viajan "a bordo" de las tuyas, él siente el movimiento y la vibración de la acción sin el riesgo del contacto directo inicial.</li></ul>
+      </li>
+      <li><strong>Transferencia de la Percepción (La meta):</strong>
+        <ul><li>Cuando el alumno siente seguridad en el movimiento, desliza sutilmente tus manos hacia un lado o más abajo, de modo que sus yemas entren en contacto directo con el objeto. Si siente curiosidad, iniciará la exploración activa y autónoma.</li></ul>
+      </li>
+    </ol>
+
+    <h3>4. El Secreto del Éxito: "Wait-Time" (Tiempo de Espera)</h3>
+    <p>El sistema neurológico de una persona con daño sensorial o alteraciones del neurodesarrollo suele procesar la información a menor velocidad.</p>
+    <p><strong>Regla de Oro:</strong> Tras ofrecer el contacto o presentar un objeto (ej. deslizar tus manos bajo las suyas), mantente inmóvil y cuenta mentalmente <strong>entre 15 y 30 segundos</strong>.</p>
+    <ul><li>Si te apuras a mover la mano o a dar una orden verbal, saturarás su sistema (sobrecarga cognitiva) y perderás la oportunidad de que el estudiante procese y emita una respuesta voluntaria.</li></ul>
+  </article>
+
+  <details class="referencias-desplegables">
+    <summary>Bibliografía y Referencias de Consulta (Mediación Táctil)</summary>
+    <div class="referencias-contenido">
+      <ul>
+        <li><strong>Miles, B. (1998).</strong> <em>Talking the Language of the Hands to the Hands</em>. National Information Clearinghouse on Children Who Are Deaf-Blind (DB-LINK). (Fuente principal del término <em>Hand-under-Hand</em>).</li>
+        <li><strong>Chen, D., &amp; Downing, J. E. (2006).</strong> <em>Tactile Strategies for Children Who Have Visual Impairments and Multiple Disabilities: Promoting Communication and Learning Skills</em>. AFB Press.</li>
+      </ul>
+    </div>
+  </details>
+</main>
+<footer class="pie">CREBE "Señor de los Milagros" - Ucayali · Ecosistema Virtual Accesible</footer>
 </body>
 </html>
