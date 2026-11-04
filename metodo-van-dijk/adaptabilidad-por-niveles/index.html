@@ -3,10 +3,264 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'none'; style-src 'self'; frame-src 'none'">
-<title>Adaptabilidad por Niveles (EBR, CETPRO, Superior) | Método de Jan van Dijk - MEA</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' https://crebeucayali.github.io data:; frame-src 'none'; form-action 'self'">
+<title>Adaptabilidad por Niveles Educativos | Método de Jan van Dijk - MEA</title>
 <link rel="canonical" href="https://crebeucayali.github.io/materiales-educativos-accesibles/metodo-van-dijk/adaptabilidad-por-niveles/">
+<link rel="stylesheet" href="../estilos.css?v=1">
+<style>
+  .contenido-pagina{
+    width:min(1000px,calc(100% - 32px));
+    margin:0 auto;
+    padding:32px 0 56px;
+  }
+  .miga{
+    margin:0 0 18px;
+    font-size:.95rem;
+  }
+  .miga a{
+    color:#0b3550;
+    text-decoration:none;
+    font-weight:700;
+  }
+  .cabecera-seccion{
+    background:#ffffff;
+    border:1px solid #d9e2ec;
+    border-radius:24px;
+    padding:28px 24px;
+    box-shadow:0 12px 30px rgba(16,42,67,.08);
+    margin-bottom:24px;
+  }
+  .cabecera-seccion h1{
+    margin:0 0 12px;
+    color:#0b3550;
+    line-height:1.2;
+  }
+  .cabecera-seccion p{
+    margin:0;
+    color:#334e68;
+  }
+  .bloque-contenido{
+    background:#ffffff;
+    border:1px solid #d9e2ec;
+    border-radius:24px;
+    padding:28px 24px;
+    box-shadow:0 12px 30px rgba(16,42,67,.08);
+  }
+  .bloque-contenido h2,
+  .bloque-contenido h3,
+  .bloque-contenido h4{
+    color:#0b3550;
+    line-height:1.3;
+  }
+  .bloque-contenido h2{
+    margin-top:0;
+    margin-bottom:16px;
+  }
+  .bloque-contenido h3{
+    margin-top:28px;
+    margin-bottom:12px;
+  }
+  .bloque-contenido h4{
+    margin-top:20px;
+    margin-bottom:10px;
+  }
+  .bloque-contenido p,
+  .bloque-contenido li{
+    color:#243b53;
+    line-height:1.8;
+  }
+  .bloque-contenido ul,
+  .bloque-contenido ol{
+    padding-left:22px;
+  }
+  .frase-destacada{
+    margin:0 0 24px;
+    padding:18px 20px;
+    background:#f0fdfa;
+    border-left:6px solid #0f766e;
+    border-radius:16px;
+    color:#102a43;
+  }
+  .frase-destacada p{
+    margin:0;
+  }
+  .placeholder-imagen{
+    margin:20px 0;
+    padding:18px 20px;
+    border:2px dashed #94a3b8;
+    border-radius:18px;
+    background:#f8fafc;
+    color:#486581;
+  }
+  .placeholder-imagen strong{
+    display:block;
+    margin-bottom:8px;
+    color:#0b3550;
+  }
+  .tabla-responsive{
+    overflow-x:auto;
+    margin:18px 0;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:760px;
+  }
+  th, td{
+    border:1px solid #d9e2ec;
+    padding:14px 12px;
+    text-align:left;
+    vertical-align:top;
+    line-height:1.6;
+  }
+  th{
+    background:#f0fdfa;
+    color:#0b3550;
+  }
+  .resumen-equipo{
+    margin-top:28px;
+    padding:20px;
+    background:#fff7e6;
+    border:1px solid #f2d28b;
+    border-radius:18px;
+  }
+  .resumen-equipo h3{
+    margin-top:0;
+    color:#8a5a00;
+  }
+  .resumen-equipo ul{
+    margin:0;
+  }
+  .separador{
+    border:none;
+    border-top:1px solid #d9e2ec;
+    margin:28px 0;
+  }
+  @media (max-width:640px){
+    .cabecera-seccion,
+    .bloque-contenido{
+      padding:22px 18px;
+      border-radius:18px;
+    }
+  }
+
+  .referencias-desplegables{margin-top:24px;background:#fff;border:1px solid #d9e2ec;border-radius:20px;box-shadow:0 12px 30px rgba(16,42,67,.08);overflow:hidden}
+  .referencias-desplegables summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;color:#0b3550;font-weight:800;font-size:1.12rem}
+  .referencias-desplegables summary::-webkit-details-marker{display:none}
+  .referencias-desplegables summary::after{content:"+";font-size:1.5rem;line-height:1;color:#0f766e}
+  .referencias-desplegables[open] summary::after{content:"−"}
+  .referencias-desplegables summary:focus-visible{outline:3px solid #0f766e;outline-offset:-5px}
+  .referencias-contenido{padding:0 24px 24px;border-top:1px solid #d9e2ec}
+  .referencias-contenido h3{color:#0b3550;margin:24px 0 12px;font-size:1.12rem}
+  .referencias-contenido li{line-height:1.7;margin-bottom:12px;overflow-wrap:anywhere}
+  .referencias-contenido li ul{margin-top:7px}
+  @media(max-width:640px){.referencias-desplegables summary{padding:16px 18px;font-size:1rem}.referencias-contenido{padding:0 18px 18px}}
+</style>
 </head>
 <body>
+<a class="skip" href="#contenido">Ir al contenido</a>
+<header class="cabecera">
+  <div class="contenedor">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="identidad" href="../">
+        <img src="https://crebeucayali.github.io/banco-digital-accesible/logo-crebe.png" alt="Logo institucional CREBE">
+        <span>Materiales Educativos Accesibles
+          <span class="subtitulo-institucional">CREBE "Señor de los Milagros" - Ucayali</span>
+        </span>
+      </a>
+      <a class="volver" href="../">Volver al Método</a>
+    </nav>
+    <h1>Método de Jan van Dijk</h1>
+    <p class="introduccion">Página 4: Adaptabilidad por Niveles Educativos</p>
+  </div>
+</header>
+<main id="contenido" class="contenido-pagina">
+  <p class="miga"><a href="../../">MEA</a> / <a href="../">Método de Jan van Dijk</a> / <span>Adaptabilidad por niveles</span></p>
+  <section class="cabecera-seccion" aria-labelledby="titulo-seccion">
+    <h1 id="titulo-seccion">Sección A - Página 4: Adaptabilidad por Niveles Educativos</h1>
+  </section>
+  <article class="bloque-contenido">
+    <blockquote class="frase-destacada">
+      <p><strong>“La verdadera inclusión no consiste en insertar al estudiante en un currículo rígido, sino en flexibilizar la mediación pedagógica para que el currículo lo abrace en cualquier nivel del sistema.”</strong></p>
+    </blockquote>
+
+    <p>El Método Jan van Dijk, aunque nació en el contexto de la sordoceguera y la educación especial profunda, ofrece principios universales que enriquecen toda la trayectoria educativa. Sus fundamentos —el vínculo, la anticipación, el respeto táctil y la estructuración sensorial— son herramientas transversales para el Diseño Universal para el Aprendizaje (DUA).</p>
+    <p>A continuación, detallamos cómo se traduce este marco teórico en los diferentes niveles y modalidades de nuestra red institucional.</p>
+    <hr class="separador">
+
+    <h3>1. Educación Básica Regular (EBR: Inicial, Primaria y Secundaria)</h3>
+    <p>En la EBR, las aulas son altamente heterogéneas. Encontramos estudiantes neurotípicos interactuando con alumnos que presentan Trastorno del Espectro Autista (TEA), TDAH, o discapacidades sensoriales moderadas.</p>
+    <p>El desafío aquí es aplicar la mediación de Van Dijk para <strong>derribar barreras de acceso a la información y reducir la ansiedad frente a lo abstracto</strong>.</p>
+    <ul>
+      <li><strong>Nivel Inicial:</strong>
+        <ul>
+          <li><strong>Aplicación:</strong> El currículo ya es concreto, pero se debe potenciar la fase de <em>Resonancia</em>.</li>
+          <li><strong>Estrategia Van Dijk:</strong> Si un niño presenta desregulación emocional al entrar al aula, la docente no impone el "tiempo de asamblea" de forma verbal. Utiliza el <em>Movimiento Coactivo</em> (ej. balancearse juntos suavemente) para regular su sistema nervioso antes de exigir atención cognitiva.</li>
+        </ul>
+      </li>
+      <li><strong>Niveles Primaria y Secundaria:</strong>
+        <ul>
+          <li><strong>Aplicación:</strong> Las materias se vuelven altamente abstractas (matemáticas, historia, comprensión lectora), lo que frustra a estudiantes con procesamiento atípico.</li>
+          <li><strong>Estrategia Van Dijk:</strong> Retroceder del "Símbolo" (texto/número) al "Objeto de Referencia". Utilizar <em>Cajas de Anticipación</em> para estructurar los bloques de 45 minutos (ej. un objeto concreto para "matemáticas", otro para "descanso"), y asegurar el cierre cognitivo de la materia guardando el objeto en la "Caja de Terminado".</li>
+        </ul>
+      </li>
+    </ul>
+    <hr class="separador">
+
+    <h3>2. Educación Técnico-Productiva (CETPRO)</h3>
+    <p>La formación técnica (talleres ocupacionales, manualidades, oficios) es un espacio ideal para la intervención Van Dijk, porque el aprendizaje es inherentemente cinestésico (basado en el hacer).</p>
+    <p>El objetivo es lograr la autonomía laboral garantizando la <strong>seguridad física y emocional</strong> frente a herramientas y maquinarias.</p>
+    <h4>Adaptación Teórica para Talleres:</h4>
+    <ul>
+      <li><strong>Tolerancia Táctil Progresiva:</strong> Al introducir una herramienta nueva (por ejemplo, una máquina de coser o una pulidora), el ruido y la vibración pueden causar rechazo sensorial.</li>
+      <li><strong>Aplicación de Mano bajo Mano:</strong> El docente de CETPRO no debe tomar la mano del estudiante para forzarlo a sostener la herramienta. Aplica el <em>Hand-under-Hand</em>: el docente maneja la herramienta y el estudiante apoya sus manos libremente sobre las del maestro. Así, el alumno experimenta la vibración, el ritmo de trabajo y el resultado final desde un plano de total seguridad antes de asumir el control autónomo.</li>
+    </ul>
+    <hr class="separador">
+
+    <h3>3. Educación Superior Pedagógica (Formación Inicial Docente)</h3>
+    <p>Para los estudiantes de institutos pedagógicos o facultades de educación, el Método Van Dijk no es solo una "técnica para educación especial"; es un <strong>cambio de paradigma epistemológico sobre la didáctica</strong>.</p>
+    <ul>
+      <li><strong>Deconstrucción de Prácticas Capacitistas:</strong>
+        <ul>
+          <li>Los futuros docentes deben desaprender la idea de que "enseñar es hablar y aprender es escuchar".</li>
+          <li>La teoría de Van Dijk les enseña a valorar la comunicación pre-simbólica (postura, respiración, tono muscular) como información válida y central para la evaluación diagnóstica.</li>
+        </ul>
+      </li>
+      <li><strong>El Docente como Mediador Sensorial:</strong>
+        <ul>
+          <li>En la formación superior, el método se estudia para diseñar entornos de aprendizaje bajo los principios del DUA. Los estudiantes de educación aprenden a diseñar secuencias didácticas donde el "Tiempo de Espera" (<em>Wait-Time</em> de 15-30 segundos) no se penaliza como falta de interés del alumno, sino que se planifica como un derecho neurológico al procesamiento de la información.</li>
+        </ul>
+      </li>
+    </ul>
+    <hr class="separador">
+
+    <h3>Resumen Metodológico Institucional</h3>
+    <div class="tabla-responsive">
+      <table aria-label="Resumen metodológico del enfoque Van Dijk por nivel educativo">
+        <thead>
+          <tr><th scope="col">Nivel Educativo</th><th scope="col">Reto Principal</th><th scope="col">Solución desde Van Dijk</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>EBR (Regular)</strong></td>
+            <td>Ansiedad ante rutinas y currículo abstracto.</td>
+            <td>Calendarios objetuales y anticipación para estructurar el tiempo escolar.</td>
+          </tr>
+          <tr>
+            <td><strong>CETPRO (Técnico)</strong></td>
+            <td>Rechazo a herramientas y materiales nuevos.</td>
+            <td>Exploración progresiva mediante la técnica táctil "Mano bajo Mano".</td>
+          </tr>
+          <tr>
+            <td><strong>Superior (Docentes)</strong></td>
+            <td>Intervención excesivamente verbal y directiva.</td>
+            <td>Formación en <em>Resonancia</em> y respeto a los tiempos neurológicos de procesamiento.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+</main>
+<footer class="pie">CREBE "Señor de los Milagros" - Ucayali · Ecosistema Virtual Accesible</footer>
 </body>
 </html>
