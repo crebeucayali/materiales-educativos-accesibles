@@ -143,6 +143,18 @@
       border-radius:18px;
     }
   }
+
+  .referencias-desplegables{margin-top:24px;background:#fff;border:1px solid #d9e2ec;border-radius:20px;box-shadow:0 12px 30px rgba(16,42,67,.08);overflow:hidden}
+  .referencias-desplegables summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;color:#0b3550;font-weight:800;font-size:1.12rem}
+  .referencias-desplegables summary::-webkit-details-marker{display:none}
+  .referencias-desplegables summary::after{content:"+";font-size:1.5rem;line-height:1;color:#0f766e}
+  .referencias-desplegables[open] summary::after{content:"−"}
+  .referencias-desplegables summary:focus-visible{outline:3px solid #0f766e;outline-offset:-5px}
+  .referencias-contenido{padding:0 24px 24px;border-top:1px solid #d9e2ec}
+  .referencias-contenido h3{color:#0b3550;margin:24px 0 12px;font-size:1.12rem}
+  .referencias-contenido li{line-height:1.7;margin-bottom:12px;overflow-wrap:anywhere}
+  .referencias-contenido li ul{margin-top:7px}
+  @media(max-width:640px){.referencias-desplegables summary{padding:16px 18px;font-size:1rem}.referencias-contenido{padding:0 18px 18px}}
 </style>
 </head>
 <body>
@@ -333,6 +345,41 @@
       </div>
     </section>
   </article>
+
+  <details class="referencias-desplegables">
+    <summary>Referencias Bibliográficas y Fuentes de Consulta (Niveles de Intervención)</summary>
+    <div class="referencias-contenido">
+      <h3>1. Sobre Resonancia y Movimiento Coactivo (Niveles 1 y 2)</h3>
+      <ul>
+        <li><strong>MacFarland, S. Z. (1995).</strong> <em>Teaching Strategies of the van Dijk Curricular Approach</em>. Journal of Visual Impairment &amp; Blindness, 89(3), 222-228.
+          <ul><li><em>Sustento Teórico:</em> Es el documento seminal que define y diferencia formalmente la "Resonancia" (sintonizar con el movimiento del estudiante) del "Movimiento Coactivo" (guiar de manera compartida el movimiento para estructurar el entorno).</li></ul>
+        </li>
+        <li><strong>Van Dijk, J. (1986).</strong> <em>An educational curriculum for deaf-blind multi-handicapped persons</em>. En D. Ellis (Ed.), <em>Sensory impairments in mentally handicapped people</em> (pp. 374-382). Croom Helm.
+          <ul><li><em>Sustento Teórico:</em> Obra clásica donde Jan van Dijk explica que el comportamiento motor atípico (autoestimulación) no es un problema a erradicar, sino el punto de partida para construir el apego a través de la resonancia.</li></ul>
+        </li>
+      </ul>
+
+      <h3>2. Sobre Sistemas de Anticipación, Cajas de Finalizado y Rutinas (Nivel 3)</h3>
+      <ul>
+        <li><strong>Blaha, R. (2001).</strong> <em>Calendars for Students with Multiple Visual Impairments, Including Deafblindness</em>. Texas School for the Blind and Visually Impaired (TSBVI).
+          <ul><li><em>Sustento Teórico:</em> Robbie Blaha, experto de TSBVI, estructuró la aplicación práctica de los "calendarios de anticipación" basados en la teoría de Van Dijk. Este manual es la base para el uso de cajas de anticipación, objetos reales de referencia y el concepto de la "caja de finalizado" (<em>finish box</em>) para reducir la ansiedad del tiempo irresoluto.</li></ul>
+        </li>
+        <li><strong>Vermeij, B. (2002).</strong> <em>Co-active movement and anticipating: two key features of the Van Dijk approach</em>. Viataal / Sint-Michielsgestel.
+          <ul><li><em>Sustento Teórico:</em> Documento institucional holandés que fundamenta por qué la anticipación debe basarse primero en el movimiento y luego transicionar al uso de objetos concretos para estructurar el tiempo del alumno con sordoceguera.</li></ul>
+        </li>
+      </ul>
+
+      <h3>3. Sobre Representación Simbólica y Jerarquía de Abstracción (Nivel 4)</h3>
+      <ul>
+        <li><strong>Rowland, C., &amp; Fried-Oken, M. (2010).</strong> <em>Communication Matrix: A clinical and research assessment tool targeting children with severe multiple disabilities</em>. Journal of Pediatric Rehabilitation Medicine, 3(4), 319-329.
+          <ul><li><em>Sustento Teórico:</em> Detalla la "escalera de la abstracción" en la comunicación aumentativa, validando el proceso descrito en la Página 2: desde conductas no intencionales hasta el uso de representaciones táctiles, objetos asociados (miniaturas) y símbolos formales (Braille, señas, escritura).</li></ul>
+        </li>
+        <li><strong>Brown, D. (2008).</strong> <em>The importance of "Wait Time" and "Finish Box" in deafblind education</em>. California Deaf-Blind Services.
+          <ul><li><em>Sustento Teórico:</em> David Brown, un referente mundial en intervención en sordoceguera, explica la necesidad crítica de la constancia de los objetos de referencia y detalla por qué omitir el cierre de la actividad (no guardar el objeto) es uno de los errores pedagógicos más estresantes para el estudiante, tal como se menciona en el cuadro de "Errores Comunes".</li></ul>
+        </li>
+      </ul>
+    </div>
+  </details>
 </main>
 
 <footer class="pie">
