@@ -155,6 +155,18 @@
   .referencias-contenido li{line-height:1.7;margin-bottom:12px;overflow-wrap:anywhere}
   .referencias-contenido li ul{margin-top:7px}
   @media(max-width:640px){.referencias-desplegables summary{padding:16px 18px;font-size:1rem}.referencias-contenido{padding:0 18px 18px}}
+
+  .referencias-desplegables{margin-top:24px;background:#fff;border:1px solid #d9e2ec;border-radius:20px;box-shadow:0 12px 30px rgba(16,42,67,.08);overflow:hidden}
+  .referencias-desplegables summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;color:#0b3550;font-weight:800;font-size:1.12rem}
+  .referencias-desplegables summary::-webkit-details-marker{display:none}
+  .referencias-desplegables summary::after{content:"+";font-size:1.5rem;line-height:1;color:#0f766e}
+  .referencias-desplegables[open] summary::after{content:"−"}
+  .referencias-desplegables summary:focus-visible{outline:3px solid #0f766e;outline-offset:-5px}
+  .referencias-contenido{padding:0 24px 24px;border-top:1px solid #d9e2ec}
+  .referencias-contenido h3{color:#0b3550;margin:24px 0 12px;font-size:1.12rem}
+  .referencias-contenido li{line-height:1.7;margin-bottom:12px;overflow-wrap:anywhere}
+  .referencias-contenido li ul{margin-top:7px}
+  @media(max-width:640px){.referencias-desplegables summary{padding:16px 18px;font-size:1rem}.referencias-contenido{padding:0 18px 18px}}
 </style>
 </head>
 <body>
@@ -260,6 +272,39 @@
       </table>
     </div>
   </article>
+
+  <details class="referencias-desplegables">
+    <summary>Bibliografía y Referencias de Consulta (Adaptabilidad y Diseño Universal)</summary>
+    <div class="referencias-contenido">
+      <h3>1. Sobre Inclusión en Educación Básica Regular (EBR) y DUA</h3>
+      <ul>
+        <li><strong>CAST (2018).</strong> <em>Universal Design for Learning Guidelines version 2.2.</em> Center for Applied Special Technology.
+          <ul><li><em>Sustento Teórico:</em> Es el documento fundacional del DUA. Se conecta con Van Dijk en el principio de proporcionar "Múltiples Formas de Representación" (usar objetos reales en lugar de solo texto/voz) y "Múltiples Formas de Implicación" (reducir la ansiedad estructurando rutinas y entornos seguros).</li></ul>
+        </li>
+        <li><strong>Bruce, S. M. (2005).</strong> <em>The Impact of Congenital Deafblindness on the Struggle to Symbolism</em>. International Journal of Disability, Development and Education, 52(3), 233-251.
+          <ul><li><em>Sustento Teórico:</em> Explica detalladamente cómo los estudiantes con desarrollo atípico batallan con el currículo abstracto de la EBR y por qué es imperativo que los docentes regulares sepan retroceder hacia la comunicación pre-simbólica (niveles concretos).</li></ul>
+        </li>
+      </ul>
+      <h3>2. Sobre Educación Técnico-Productiva (CETPRO) y Transición a la Vida Adulta</h3>
+      <ul>
+        <li><strong>Aitken, S., Buultjens, M., Clark, C., Eyre, J. T., &amp; Pease, L. (2000).</strong> <em>Teaching Children who are Deafblind: Contact, Communication and Learning</em>. David Fulton Publishers.
+          <ul><li><em>Sustento Teórico:</em> Este libro cuenta con capítulos específicos sobre cómo abordar tareas prácticas y ocupacionales. Fundamenta la importancia de la exploración libre sin coerción táctil para evitar la "indefensión aprendida", crucial para que un estudiante de formación técnica logre autonomía.</li></ul>
+        </li>
+        <li><strong>McLetchie, B. A., &amp; MacFarland, S. Z. (1995).</strong> <em>The Need for Qualified Teachers of Students Who Are Deaf-Blind</em>. Journal of Visual Impairment &amp; Blindness, 89(3), 244-248.
+          <ul><li><em>Sustento Teórico:</em> Apoya el marco de formación para la vida independiente y el trabajo, enfatizando que el andamiaje motor (mano bajo mano) es la base para enseñar oficios seguros a jóvenes con discapacidad severa.</li></ul>
+        </li>
+      </ul>
+      <h3>3. Sobre Formación Inicial Docente (Educación Superior)</h3>
+      <ul>
+        <li><strong>Silberman, R. K., Bruce, S. M., &amp; Nelson, C. (2004).</strong> <em>Children with sensory impairments</em>. En F. P. Orelove, D. Sobsey, &amp; R. K. Silberman (Eds.), <em>Educating children with multiple disabilities: A collaborative approach</em> (4ª ed., pp. 425-528). Paul H. Brookes Publishing.
+          <ul><li><em>Sustento Teórico:</em> Texto clave utilizado en facultades de educación y pedagogía para deconstruir el capacitismo docente. Aboga por la formación de educadores "mediadores" que entiendan la necesidad del tiempo de espera (<em>wait-time</em>) y la evaluación basada en la respuesta sensorial del estudiante.</li></ul>
+        </li>
+        <li><strong>Hodges, L. (2000).</strong> <em>Effective Teaching and Learning Environments</em>. En <em>Deafblindness: Educational Service Guidelines</em> (pp. 57-79). Perkins School for the Blind.
+          <ul><li><em>Sustento Teórico:</em> Guía para directivos y estudiantes de educación superior sobre cómo estructurar el aula y el perfil pedagógico necesario para no ser invasivos al interactuar con diversidad funcional.</li></ul>
+        </li>
+      </ul>
+    </div>
+  </details>
 </main>
 <footer class="pie">CREBE "Señor de los Milagros" - Ucayali · Ecosistema Virtual Accesible</footer>
 </body>
