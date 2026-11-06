@@ -85,6 +85,19 @@
   .frase-destacada p{
     margin:0;
   }
+  .imagen-pedagogica{max-width:860px;margin:24px auto 28px}
+  .imagen-pedagogica img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid #d9e2ec;background:#f8fafc}
+  .imagen-pedagogica figcaption{margin-top:10px;color:#334e68;font-size:.94rem;line-height:1.55}
+  .demostracion-tactil{margin:24px auto 28px;border:1px solid #cbdde5;border-radius:18px;padding:20px;background:#f5fafb}
+  .demostracion-tactil h4{margin:0 0 14px}
+  .demostracion-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .demostracion-paso{background:#fff;border:1px solid #cbdde5;border-radius:12px;padding:16px}
+  .demostracion-paso strong{display:block;color:#0b3550;margin-bottom:7px}
+  .demostracion-paso p{margin:0;line-height:1.55}
+  .demostracion-tactil figcaption{margin-top:13px;color:#334e68;font-size:.94rem;line-height:1.55}
+  .caso-practico{border-left:5px solid #0f766e;background:#f0fdfa;border-radius:12px;padding:18px 20px;margin:24px 0}
+  .caso-practico h4{margin-top:0}
+  @media(max-width:640px){.imagen-pedagogica{margin:20px auto 24px}.imagen-pedagogica img{border-radius:12px}.demostracion-tactil{padding:14px}.demostracion-grid{grid-template-columns:1fr}}
   .placeholder-imagen{
     margin:20px 0;
     padding:18px 20px;
@@ -201,6 +214,17 @@
     <tr><td>Acceso táctil</td><td>La posición de las manos puede restringir el contacto directo con el objeto.</td><td>El estudiante puede percibir la acción del adulto y explorar directamente cuando lo elige.</td></tr>
     <tr><td>Retirada</td><td>Debe evitarse sujetar o mantener el contacto contra la voluntad de la persona.</td><td>Se conserva la posibilidad de retirar libremente las manos.</td></tr>
     </tbody></table></div>
+    <figure class="demostracion-tactil" aria-labelledby="titulo-secuencia-mano" aria-describedby="descripcion-secuencia-mano">
+      <h4 id="titulo-secuencia-mano">Secuencia pedagógica de mediación táctil</h4>
+      <div class="demostracion-grid">
+        <div class="demostracion-paso"><strong>1. Comparar los apoyos</strong><p>En la guía mano sobre mano, el adulto dirige el movimiento. Con mano bajo mano, ofrece sus manos debajo o al lado para facilitar la participación voluntaria.</p></div>
+        <div class="demostracion-paso"><strong>2. Invitar al contacto</strong><p>Presentar las manos de manera accesible, sin sujetar las del estudiante y respetando la retirada.</p></div>
+        <div class="demostracion-paso"><strong>3. Explorar juntos</strong><p>Compartir una actividad con objetos seguros y observar la iniciativa y el ritmo del estudiante.</p></div>
+        <div class="demostracion-paso"><strong>4. Favorecer la autonomía</strong><p>Permitir que el estudiante continúe la exploración y ofrecer apoyo únicamente cuando sea necesario.</p></div>
+      </div>
+      <figcaption id="descripcion-secuencia-mano">Secuencia accesible de las cuatro situaciones. La ilustración WebP complementaria podrá incorporarse cuando esté subida al repositorio.</figcaption>
+    </figure>
+
     <h3>2. Aplicación paso a paso</h3>
     <ol>
     <li><strong>Preparar y anunciar la actividad.</strong> Elegir un objeto seguro, procurar una postura cómoda y utilizar una señal de presencia que el estudiante reconozca. Evitar el contacto inesperado: no hay una zona de contacto inicial universal.</li>
@@ -227,6 +251,13 @@
     <tr><td>EBR</td><td>Explorar figuras geométricas grandes y otros materiales accesibles.</td><td>Facilitar el acceso a contenidos mediante el tacto.</td></tr>
     <tr><td>CETPRO</td><td>Organizar objetos grandes y seguros en bandejas durante una tarea funcional.</td><td>Promover elección y autonomía sin herramientas de riesgo.</td></tr>
     </tbody></table></div>
+    <section class="caso-practico" aria-labelledby="caso-practico-tactil">
+      <h4 id="caso-practico-tactil">Caso práctico: exploración compartida en CEBE</h4>
+      <p>Durante una actividad de exploración en CEBE, la docente presenta una bandeja con una cuchara y un recipiente familiar. Anuncia su presencia mediante una señal previamente conocida y ofrece sus manos debajo o junto a las del estudiante, sin sujetarlas. El estudiante toca brevemente la cuchara y retira las manos. La docente detiene la invitación, mantiene el objeto disponible a una distancia cómoda y permite una pausa, sin insistir en recuperar el contacto.</p>
+      <p>Más adelante, el estudiante vuelve a acercarse a la cuchara y la explora durante un momento. La docente registra ambas respuestas sin asumir que la primera retirada indicaba necesariamente rechazo. Para la siguiente oportunidad, conservará los materiales familiares y observará si la duración, la posición del objeto o el ritmo de la propuesta requieren ajustes.</p>
+      <p><strong>Orientación pedagógica:</strong> este caso es hipotético y ejemplifica cómo respetar la iniciativa y distinguir una respuesta observable de su interpretación. No constituye un protocolo que deba repetirse de forma idéntica con todos los estudiantes.</p>
+    </section>
+
     <h3>6. Ficha breve de observación docente</h3>
     <p>Este registro es una orientación pedagógica, no una escala diagnóstica validada. Conviene distinguir los hechos observados de las interpretaciones provisionales.</p>
     <div class="tabla-responsive"><table aria-label="Ficha de registro de mediación táctil"><thead><tr><th>Campo</th><th>Información sugerida</th></tr></thead><tbody>
