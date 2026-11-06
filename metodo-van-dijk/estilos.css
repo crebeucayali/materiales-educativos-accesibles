@@ -49,3 +49,12 @@
 .pagina-indice-van-dijk .enlace-material:hover{background:#0b4f4a;color:#fff}
 .pagina-indice-van-dijk .enlace-material:focus-visible{outline:3px solid #ff9e30;outline-offset:4px}
 @media(max-width:680px){.pagina-indice-van-dijk .tarjeta.tarjeta-material{min-height:240px;padding:20px}}
+
+/* Subpáginas del método: cabecera y pie equivalentes al índice institucional. */
+.pagina-subpagina-van-dijk .cabecera{background:linear-gradient(135deg,rgba(11,53,80,.92),rgba(15,79,87,.90) 50%,rgba(15,118,110,.90)),url("https://crebeucayali.github.io/patron-shipibo.webp?v=11") center/320px auto repeat;color:#fff}
+.pagina-subpagina-van-dijk .encabezado-contenido{padding-top:34px}
+.pagina-subpagina-van-dijk .pie{background:#0b3550;color:#eff7fa;text-align:left}
+.pagina-subpagina-van-dijk .footer-contenido{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(2,minmax(0,1fr));gap:28px}
+.pagina-subpagina-van-dijk .footer-legal-eva{display:flex;flex-wrap:wrap;gap:12px 24px}
+@media(max-width:850px){.pagina-subpagina-van-dijk .footer-contenido{grid-template-columns:repeat(2,minmax(0,1fr))}.pagina-subpagina-van-dijk .footer-marca{grid-column:1/-1}}
+@media(max-width:600px){.pagina-subpagina-van-dijk .footer-contenido{grid-template-columns:1fr}.pagina-subpagina-van-dijk .footer-marca{grid-column:auto}}
