@@ -124,20 +124,19 @@
     background:#f0fdfa;
     color:#0b3550;
   }
-  .esquema{
-    margin:18px 0;
-    padding:18px 20px;
-    background:#0b3550;
-    color:#ffffff;
-    border-radius:18px;
-    overflow:auto;
-  }
-  .esquema pre{
-    margin:0;
-    white-space:pre-wrap;
-    font-family:Consolas, Monaco, monospace;
-    line-height:1.7;
-  }
+  .esquema-conceptual{margin:22px 0;padding:22px;background:#f4f9fb;border:1px solid #cadce6;border-radius:20px}
+  .esquema-conceptual h5{margin:0 0 16px;text-align:center;color:#0b3550;font-size:1.1rem}
+  .esquema-observacion{max-width:410px;margin:0 auto;padding:15px;border-radius:14px;background:#0b3550;color:#fff;text-align:center}
+  .esquema-observacion strong{color:#fff;display:block;font-size:1.05rem}
+  .esquema-observacion span{display:block;color:#e2f0f5;margin-top:4px}
+  .esquema-flecha{text-align:center;font-size:1.6rem;color:#0f766e;font-weight:700;line-height:1.7}
+  .esquema-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .esquema-elemento{padding:16px;border:1px solid #bed6dc;background:#fff;border-radius:14px;text-align:center}
+  .esquema-elemento strong{display:block;color:#0b3550;font-size:1.02rem}
+  .esquema-elemento span{display:block;color:#334e68;margin-top:6px}
+  .esquema-retorno{margin-top:16px;padding:14px 16px;background:#e9f5f1;border-left:4px solid #0f766e;border-radius:10px;color:#123b37;line-height:1.55}
+  .esquema-conceptual figcaption{margin-top:14px;font-size:.93rem;color:#334e68;line-height:1.5}
+  @media(max-width:520px){.esquema-conceptual{padding:15px}.esquema-grid{grid-template-columns:1fr}}
   .resumen-equipo{
     margin-top:28px;
     padding:20px;
@@ -318,12 +317,25 @@
     </div>
     <h4>Ejemplo orientativo de observación</h4>
     <p>Durante una actividad con recipientes seguros, la docente observa que un estudiante vuelve a tocar repetidamente uno que produce vibraciones. En lugar de atribuir de inmediato un significado a esa respuesta, registra qué sucedió, qué apoyo ofreció, cómo respondió el estudiante y si el interés se mantiene en otros momentos. Con esa información, puede planificar una interacción compartida ajustada a sus preferencias.</p>
-    <h4>Relación entre observación, vínculo, interacción y comunicación</h4>
-    <div class="esquema" role="img" aria-label="Esquema flexible: la observación orienta el vínculo, la interacción compartida, la anticipación y la comunicación; las respuestas del estudiante retroalimentan continuamente la observación.">
-      <p style="color:#fff;margin:0 0 12px"><strong>Observar las iniciativas y respuestas</strong> → <strong>ofrecer una interacción respetuosa</strong> → <strong>construir experiencias compartidas</strong> → <strong>facilitar anticipación y comunicación</strong></p>
-      <p style="color:#e2e8f0;margin:0">La respuesta del estudiante permite volver a observar y ajustar los apoyos en cualquier momento. Es un proceso flexible, no una secuencia obligatoria.</p>
-    </div>
-    <section class="resumen-equipo" aria-labelledby="resumen-equipo-docente">
+    <h4>Esquema conceptual del enfoque de Van Dijk</h4>
+    <figure class="esquema-conceptual" aria-labelledby="titulo-esquema" aria-describedby="descripcion-esquema">
+      <h5 id="titulo-esquema">Observar para construir experiencias significativas</h5>
+      <div class="esquema-observacion">
+        <strong>Observación del estudiante</strong>
+        <span>Intereses, iniciativas y respuestas</span>
+      </div>
+      <div class="esquema-flecha" aria-hidden="true">↓</div>
+      <div class="esquema-grid">
+        <div class="esquema-elemento"><strong>Vínculo afectivo</strong><span>Confianza, seguridad y respeto</span></div>
+        <div class="esquema-elemento"><strong>Interacción compartida</strong><span>Movimiento y experiencias conjuntas</span></div>
+        <div class="esquema-elemento"><strong>Anticipación</strong><span>Rutinas, objetos y referencias significativas</span></div>
+        <div class="esquema-elemento"><strong>Comunicación</strong><span>Expresión, respuesta e intercambio</span></div>
+      </div>
+      <p class="esquema-retorno" id="descripcion-esquema"><strong>Proceso continuo:</strong> las respuestas del estudiante permiten volver a observar y ajustar los apoyos en cualquier momento.</p>
+      <figcaption>Esquema pedagógico elaborado para EVA-CREBE a partir de principios del enfoque de Van Dijk. Sus componentes se relacionan de manera flexible; no constituyen etapas obligatorias ni una clasificación original del autor.</figcaption>
+    </figure>
+
+        <section class="resumen-equipo" aria-labelledby="resumen-equipo-docente">
       <h3 id="resumen-equipo-docente">Resumen para el Equipo Docente</h3>
       <ul>
         <li>Partir de los intereses, las iniciativas y las formas de comunicación que el estudiante ya manifiesta.</li>
