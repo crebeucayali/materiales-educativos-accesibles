@@ -35,3 +35,17 @@
 .pagina-indice-van-dijk a:focus-visible{outline:3px solid #ff9e30;outline-offset:4px}
 @media(max-width:850px){.pagina-indice-van-dijk .footer-contenido{grid-template-columns:repeat(2,minmax(0,1fr))}.pagina-indice-van-dijk .footer-marca{grid-column:1/-1}.pagina-indice-van-dijk .enlaces-superiores{justify-content:flex-start}}
 @media(max-width:600px){.pagina-indice-van-dijk .cabecera{padding:20px 16px 66px}.pagina-indice-van-dijk .identidad{flex-basis:100%}.pagina-indice-van-dijk .enlaces-superiores{gap:8px}.pagina-indice-van-dijk .volver{padding:7px 12px}.pagina-indice-van-dijk .footer-contenido{grid-template-columns:1fr}.pagina-indice-van-dijk .footer-marca{grid-column:auto}.pagina-indice-van-dijk .pie{padding:30px 16px 18px}}
+
+/* Tarjetas de los cuatro subaccesos: diseño visual de MEA, limitado al índice Van Dijk. */
+.pagina-indice-van-dijk .grid{gap:18px}
+.pagina-indice-van-dijk .tarjeta.tarjeta-material{position:relative;min-width:0;min-height:260px;padding:22px;border:1px solid rgba(15,118,110,.35);border-radius:24px;border-top:1px solid rgba(15,118,110,.35);background:linear-gradient(180deg,#fff 0%,#eef9f6 100%);box-shadow:0 10px 22px rgba(16,42,67,.06);display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.pagina-indice-van-dijk .tarjeta-cuerpo{min-width:0}
+.pagina-indice-van-dijk .material-icono{display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin-bottom:16px;border-radius:18px;background:#e6f4f1;color:#0f766e;font-size:1rem;font-weight:900}
+.pagina-indice-van-dijk .tarjeta.tarjeta-material h2{margin:0 0 10px;color:#0b2f4a;font-size:1.15rem;line-height:1.35}
+.pagina-indice-van-dijk .tarjeta.tarjeta-material p{margin:0;color:#486581;font-size:.96rem;line-height:1.58}
+.pagina-indice-van-dijk .tarjeta-pie{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:auto}
+.pagina-indice-van-dijk .estado-material.disponible{display:inline-block;padding:8px 12px;border-radius:999px;background:#d9f2ec;color:#0f766e;font-size:.82rem;font-weight:800}
+.pagina-indice-van-dijk .enlace-material{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 16px;border-radius:999px;background:#0f766e;color:#fff;text-decoration:none;font-size:.9rem;font-weight:800}
+.pagina-indice-van-dijk .enlace-material:hover{background:#0b4f4a;color:#fff}
+.pagina-indice-van-dijk .enlace-material:focus-visible{outline:3px solid #ff9e30;outline-offset:4px}
+@media(max-width:680px){.pagina-indice-van-dijk .tarjeta.tarjeta-material{min-height:240px;padding:20px}}
