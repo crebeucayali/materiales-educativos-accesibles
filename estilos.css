@@ -187,3 +187,10 @@ footer{background:#082f49;color:var(--blanco);padding:42px 18px 26px;}
   .niveles-material{position:static;max-width:none;justify-content:flex-start;margin:0 0 12px;}
   .nivel-material{font-size:.64rem;}
 }
+
+
+/* EVA 2.0: accesibilidad de fichas, filtros y estados, sin afectar pictogramas. */
+html.eva-alto-contraste :is(.panel-busqueda,.panel-presentacion,.aviso-pedagogico,.tarjeta-material,.tarjeta-material.disponible,.nivel-material,.material-icono,.estado-material,.estado-vacio,.mensaje-error,.filtro,.campo-busqueda){
+ background:#000!important;background-image:none!important;color:#fff!important;border-color:#fff!important;
+}
+html.eva-alto-contraste :is(.enlace-material,.boton-mas,.boton-primario){background:#000!important;color:#ffff00!important;border:1px solid #fff!important;}
