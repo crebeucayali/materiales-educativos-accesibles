@@ -22,8 +22,10 @@ const failures=[],results=[];
 async function execute(testCase, offline=false, mobile=false){
   const context=await browser.newContext({acceptDownloads:true,...(mobile?{viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2}:{viewport:{width:1280,height:900}})});
   const page=await context.newPage();
-  const events=[],errors=[];
+  const events=[],errors=[],requests=[];
   page.on("pageerror",e=>errors.push(e.message));
+  page.on("console",msg=>{if(msg.type()==="error")errors.push(msg.text());});
+  page.on("requestfailed",req=>requests.push({url:req.url(),failure:req.failure()?.errorText}));
   await page.route("**/*",async route=>{
     const url=route.request().url();
     if(url.startsWith(ORIGIN))return route.continue();
@@ -55,7 +57,8 @@ async function execute(testCase, offline=false, mobile=false){
     if(testCase.expected.includes("_lsp:pdf")) {
       const images=page.locator("#ficha img");
       assert.ok(await images.count()>0,"El generador LSP no incorporó imágenes de señas");
-      await images.first().evaluate(img=>img.decode());
+      const imageState=await images.first().evaluate(img=>({src:img.currentSrc,complete:img.complete,width:img.naturalWidth}));
+      assert.ok(imageState.width>0,"Imagen LSP no cargada: "+JSON.stringify({imageState,requests,errors}));
     }
     await page.locator(testCase.select).waitFor({state:"visible"});
     const [download]=await Promise.all([
