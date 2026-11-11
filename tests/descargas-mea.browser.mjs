@@ -55,7 +55,7 @@ async function execute(testCase, offline=false, mobile=false){
     await page.waitForFunction(()=>Boolean(window.EVARecursos),null,{timeout:15000});
     if(testCase.prepare)await testCase.prepare(page);
     if(testCase.expected.includes("_lsp:pdf")) {
-      const images=page.locator("#ficha img");
+      const images=page.locator("#resultado .letra-sena img, #resultado .sena-completa img");
       assert.ok(await images.count()>0,"El generador LSP no incorporó imágenes de señas");
       const imageState=await images.first().evaluate(img=>({src:img.currentSrc,complete:img.complete,width:img.naturalWidth}));
       assert.ok(imageState.width>0,"Imagen LSP no cargada: "+JSON.stringify({imageState,requests,errors}));
