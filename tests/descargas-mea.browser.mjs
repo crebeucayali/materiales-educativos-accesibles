@@ -36,8 +36,12 @@ async function execute(testCase, offline=false, mobile=false){
       return route.fulfill({status:200,headers,contentType:"application/json",body:'[{"_id":1234,"keywords":[{"keyword":"comer"}]}]'});
     if(url.includes("static.arasaac.org/pictograms/"))
       return route.fulfill({status:200,headers,contentType:"image/png",body:samplePng});
-    if(url.includes("diccionario_lsp.json"))
-      return route.fulfill({status:200,headers,contentType:"application/json",body:"[]"});
+    if(url.includes("diccionario_lsp.json")) {
+      const dict=["m","e","s","a","mesa"].map(p=>({palabra:p,archivo_imagen:"imagenes/alfabeto_manual_peruano/"+p+".png"}));
+      return route.fulfill({status:200,headers,contentType:"application/json",body:JSON.stringify(dict)});
+    }
+    if(url.includes("/banco-digital-accesible/lsp/imagenes/"))
+      return route.fulfill({status:200,headers,contentType:"image/png",body:samplePng});
     if(url.endsWith(".js")||url.includes(".js?"))
       return route.fulfill({status:200,headers,contentType:"application/javascript",body:""});
     if(url.endsWith(".css")||url.includes(".css?"))
@@ -48,6 +52,11 @@ async function execute(testCase, offline=false, mobile=false){
     await page.goto(ORIGIN+"/"+testCase.page,{waitUntil:"domcontentloaded",timeout:25000});
     await page.waitForFunction(()=>Boolean(window.EVARecursos),null,{timeout:15000});
     if(testCase.prepare)await testCase.prepare(page);
+    if(testCase.expected.includes("_lsp:pdf")) {
+      const images=page.locator("#ficha img");
+      assert.ok(await images.count()>0,"El generador LSP no incorporó imágenes de señas");
+      await images.first().evaluate(img=>img.decode());
+    }
     await page.locator(testCase.select).waitFor({state:"visible"});
     const [download]=await Promise.all([
       page.waitForEvent("download",{timeout:25000}),
