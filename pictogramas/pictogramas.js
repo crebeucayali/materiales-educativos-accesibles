@@ -152,6 +152,7 @@ async function descargarImagenPng(url, nombreArchivo){
     enlaceTemporal.download = nombreArchivo;
     document.body.appendChild(enlaceTemporal);
     enlaceTemporal.click();
+    window.EVARecursos?.registrar('pictogramas','png','descarga_solicitada');
 
     enlaceTemporal.remove();
     URL.revokeObjectURL(urlTemporal);
