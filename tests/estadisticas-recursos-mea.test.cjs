@@ -4,7 +4,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
-const root = path.resolve(__dirname, "../..");
+const root = path.resolve(__dirname, "..");
 const shared = fs.readFileSync(path.join(root, "estadisticas/recursos-mea.js"), "utf8");
 const mapping = [
  ["pictogramas/pictogramas.js","pictogramas","png","descarga_solicitada"],
