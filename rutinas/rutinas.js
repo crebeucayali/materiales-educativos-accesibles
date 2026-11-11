@@ -411,6 +411,7 @@ async function descargarJpg(){
     enlace.download = crearNombreArchivo("rutina-visual", "jpg");
     enlace.href = canvas.toDataURL("image/jpeg", 0.95);
     enlace.click();
+    window.EVARecursos?.registrar('rutinas','jpg','exportacion_iniciada');
   }catch(error){
     console.error(error);
     alert("No se pudo generar el JPG. Intenta recargar la página y vuelve a descargar.");
@@ -467,6 +468,7 @@ async function descargarPdf(){
     }
 
     pdf.save(crearNombreArchivo("rutina-visual", "pdf"));
+    window.EVARecursos?.registrar("rutinas","pdf","exportacion_iniciada");
   }catch(error){
     console.error(error);
     alert("No se pudo generar el PDF. Intenta recargar la página y vuelve a descargar.");

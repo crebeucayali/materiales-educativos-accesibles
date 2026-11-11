@@ -1,0 +1,34 @@
+name: Validar métricas de recursos MEA
+on:
+  pull_request:
+    paths:
+      - 'estadisticas/recursos-mea.js'
+      - 'tests/estadisticas-recursos-mea.test.cjs'
+      - 'pictogramas/pictogramas.js'
+      - 'rutinas/rutinas.js'
+      - 'generador/generador.js'
+      - 'generador-lsp/generador-senas.js'
+      - 'apoyos-lsp/generador-lsp.js'
+      - 'conciencia-fonologica/conciencia-fonologica.js'
+      - '.github/workflows/validar-recursos-mea.yml'
+  workflow_dispatch:
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/estadisticas-recursos-mea.test.cjs
+      - run: |
+          node --check estadisticas/recursos-mea.js
+          node --check pictogramas/pictogramas.js
+          node --check rutinas/rutinas.js
+          node --check generador/generador.js
+          node --check generador-lsp/generador-senas.js
+          node --check apoyos-lsp/generador-lsp.js
+          node --check conciencia-fonologica/conciencia-fonologica.js

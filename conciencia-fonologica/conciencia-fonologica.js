@@ -272,6 +272,7 @@ function descargarFichaHtml(){
   a.href = url;
   a.download = 'ficha-silabeo.html';
   a.click();
+  window.EVARecursos?.registrar('conciencia_fonologica','html','exportacion_iniciada');
   URL.revokeObjectURL(url);
 }
 

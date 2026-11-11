@@ -44,6 +44,7 @@
     pdf.addImage(imagen,"PNG",20,42,anchoPagina,altoImagen);
     pdf.setFontSize(9);pdf.text("Material educativo generado para apoyar la consulta y práctica inicial del sistema Braille.",20,285);
     pdf.save("recurso-braille.pdf");
+    window.EVARecursos?.registrar("braille","pdf","exportacion_iniciada");
   }
 
   botonGenerar.addEventListener("click",generarBraille);
