@@ -1,0 +1,69 @@
+/* Armonización EVA 2.0 de las tarjetas de la portada MEA.
+   Exclusivo a main#contenido-principal .panel-busqueda .grid-materiales.
+   Mantiene dimensiones, enlaces, distribución y estado de construcción. */
+body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material {
+  background:#f5f7f8;
+  border:1px solid #d9e2e6;
+  border-top:4px solid #a66016;
+}
+body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material:not(.disponible) {
+  border-top-color:#9aa8b1;
+}
+body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material .material-icono {
+  background:#f3e4d2;
+  color:#8d4e10;
+}
+body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material .estado-material.disponible {
+  background:#f4e7d7;
+  color:#80440d;
+}
+body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material .tarjeta-pie > a.enlace-material {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  border:1px solid #a66016;
+  border-radius:2px;
+  background:transparent;
+  color:#a66016;
+  text-decoration:none;
+  transition:background-color .2s ease,color .2s ease;
+}
+body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material .tarjeta-pie > a.enlace-material::after {
+  content:"›";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:16px;
+  height:16px;
+  flex:none;
+  border:1px solid currentColor;
+  border-radius:50%;
+  font-size:15px;
+  font-weight:700;
+  line-height:1;
+}
+body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material .tarjeta-pie > a.enlace-material:is(:hover,:focus-visible) {
+  background:#a66016;
+  color:#fff;
+}
+body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material .tarjeta-pie > a.enlace-material:focus-visible {
+  outline:3px solid #17324d;
+  outline-offset:3px;
+}
+@media(prefers-reduced-motion:reduce) {
+  body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material .enlace-material {transition:none;}
+}
+/* La accesibilidad debe prevalecer sobre la armonización visual. */
+body.alto-contraste main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material,
+html.eva-alto-contraste body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material {
+  background:#000!important;
+  color:#fff!important;
+  border-color:#fff!important;
+}
+body.alto-contraste main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material .tarjeta-pie > a.enlace-material,
+html.eva-alto-contraste body main#contenido-principal .panel-busqueda .grid-materiales > article.tarjeta-material .tarjeta-pie > a.enlace-material {
+  background:#000!important;
+  color:#ffff00!important;
+  border-color:#fff!important;
+}
