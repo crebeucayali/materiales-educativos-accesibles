@@ -13,6 +13,18 @@ formulario.addEventListener("submit", function(evento){
   buscarPictogramas();
 });
 
+// Delegación: las tarjetas se crean después de cada búsqueda.
+lista.addEventListener("click", async (evento) => {
+  const boton = evento.target.closest("button.descargar-png");
+  if (!boton || !lista.contains(boton) || boton.disabled) return;
+  boton.disabled = true;
+  try {
+    await descargarImagenPng(boton.dataset.url, boton.dataset.nombre);
+  } finally {
+    boton.disabled = false;
+  }
+});
+
 async function buscarPictogramas(){
   const termino = buscador.value.trim();
 
