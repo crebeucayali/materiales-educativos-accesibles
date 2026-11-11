@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
 const ORIGIN="http://127.0.0.1:8765";
-const samplePng=Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/X3sAAAAASUVORK5CYII=","base64");
+const samplePng=Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAFUlEQVR4nGP8//8/AzbAhFV00EoAAFbUAw037MyjAAAAAElFTkSuQmCC","base64");
 const cases=[
  {label:"pictogramas PNG",page:"pictogramas/pictogramas.html",expected:"pictogramas:png:descarga_solicitada",extension:".png",prepare:async p=>{
    await p.locator("#buscador-pictogramas").fill("comer");
