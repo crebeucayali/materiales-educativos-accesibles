@@ -1,5 +1,6 @@
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 
 const ORIGIN="http://127.0.0.1:8765";
 const samplePng=Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/X3sAAAAASUVORK5CYII=","base64");
@@ -18,8 +19,8 @@ const cases=[
 ];
 const browser=await chromium.launch({headless:true});
 const failures=[],results=[];
-async function execute(testCase, offline=false){
-  const context=await browser.newContext({acceptDownloads:true});
+async function execute(testCase, offline=false, mobile=false){
+  const context=await browser.newContext({acceptDownloads:true,...(mobile?{viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2}:{viewport:{width:1280,height:900}})});
   const page=await context.newPage();
   const events=[],errors=[];
   page.on("pageerror",e=>errors.push(e.message));
@@ -55,6 +56,12 @@ async function execute(testCase, offline=false){
     assert.ok(download.suggestedFilename().toLowerCase().endsWith(testCase.extension),"Extensión incorrecta: "+download.suggestedFilename());
     const saved=await download.path();
     assert.ok(saved,"Archivo no disponible");
+    const fileBytes=await readFile(saved);
+    assert.ok(fileBytes.length>20,"Archivo vacío o incompleto");
+    if(testCase.extension===".pdf")assert.equal(fileBytes.subarray(0,4).toString(),"%PDF","Archivo PDF inválido");
+    if(testCase.extension===".png")assert.equal(fileBytes.subarray(1,4).toString(),"PNG","Archivo PNG inválido");
+    if(testCase.extension===".jpg")assert.equal(fileBytes.subarray(0,2).toString("hex"),"ffd8","Archivo JPG inválido");
+    if(testCase.extension===".html")assert.match(fileBytes.toString("utf8").slice(0,100),/<!doctype html>/i,"Archivo HTML inválido");
     await page.waitForTimeout(300);
     if(!offline){
       assert.equal(events.length,1,"Se esperaba una acción estadística");
@@ -62,9 +69,9 @@ async function execute(testCase, offline=false){
       assert.equal([e.p_herramienta,e.p_formato,e.p_accion].join(":"),testCase.expected,"Evento incorrecto");
       assert.deepEqual(Object.keys(e).sort(),["p_accion","p_evento_id","p_formato","p_herramienta"]);
     }
-    results.push({case:testCase.label,mode:offline?"RPC falla":"RPC responde",file:download.suggestedFilename(),events:events.length,passed:true});
+    results.push({case:testCase.label,mode:(mobile?"Móvil simulado / ":"Escritorio / ")+(offline?"RPC falla":"RPC responde"),file:download.suggestedFilename(),bytes:fileBytes.length,events:events.length,passed:true});
   }catch(e){
-    failures.push({case:testCase.label,mode:offline?"RPC falla":"RPC responde",message:e.stack||String(e),errors});
+    failures.push({case:testCase.label,mode:(mobile?"Móvil simulado / ":"Escritorio / ")+(offline?"RPC falla":"RPC responde"),message:e.stack||String(e),errors});
   }finally{
     await context.close();
   }
@@ -73,6 +80,7 @@ try{
   for(const scenario of cases)await execute(scenario,false);
   // El sistema estadístico debe ser opcional: probar descarga aun con error HTTP.
   for(const scenario of [cases[0],cases[1],cases[6]])await execute(scenario,true);
+  for(const scenario of cases)await execute(scenario,false,true);
   console.log("RESULTADOS",JSON.stringify(results,null,2));
   if(failures.length){console.error("FALLOS",JSON.stringify(failures,null,2));process.exitCode=1;}
 }finally{await browser.close();}
