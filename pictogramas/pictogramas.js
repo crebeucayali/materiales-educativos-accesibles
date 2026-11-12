@@ -218,7 +218,7 @@ function actualizarEnlacesExternos(){
     ["Capacitaciones CREBE", "https://crebeucayali.github.io/capacitaciones/"],
     ["Banco Digital Accesible", "https://crebeucayali.github.io/banco-digital-accesible/"],
     ["Juegos Educativos Accesibles", "https://crebeucayali.github.io/juegos-interactivos-accesibles/"],
-    ["Noti Inclusivos", "https://crebeucayali.github.io/noti-inclusivos/"]
+    ["Noti Inclusivos", "https://crebeucayali.github.io/accesos-complementarios/lecturas-inclusivas/"]
   ];
 
   parrafo.replaceChildren();
